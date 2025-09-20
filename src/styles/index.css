@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "flag-icons/css/flag-icons.css";
+@source "../**/*.{js,jsx,ts,tsx,html}";
+
+/* ===== Base & tokens ===== */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+  --font-sutro: "Sutro W01 Extra Bold Italic", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary-50:#eff6ff; --color-primary-100:#dbeafe; --color-primary-200:#bfdbfe;
+  --color-primary-300:#93c5fd; --color-primary-400:#60a5fa; --color-primary-500:#3b82f6;
+  --color-primary-600:#2563eb; /* utama */ --color-primary-700:#1d4ed8; --color-primary-800:#1e40af;
+
+  --color-accent-500:#f59e0b;
+  --gradient-hero: linear-gradient(120deg, var(--color-primary-700), var(--color-primary-500));
+}
+
+@font-face {
+  font-family: "Sutro W01 Extra Bold Italic";
+  src: url("/fonts/SutroW01-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@utility font-sutro {
+  font-family: var(--font-sutro);
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+/* Ukuran font global lebih besar */
+html { font-size: 17px; }
+@media (min-width: 640px){ html { font-size: 18px; } }
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: #0f172a; /* slate-900 */
+  background: #f8fafc; /* slate-50 */
+}
+
+html, body {
+  overflow-x: hidden;        /* cegah geser samping */
+  width: 100%;
+} 
+
+.container-fluid { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+.text-muted-600 { @apply text-slate-600; }
+:focus-visible { outline: 2px solid var(--color-primary-600); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce){ *{ animation:none!important; transition:none!important; } }
+
+/* ===== Buttons (premium blue) ===== */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-white transition;
+  background-image: linear-gradient(135deg, var(--color-primary-700), var(--color-primary-600));
+  box-shadow: 0 6px 14px rgba(37,99,235,.25);
+}
+.btn-primary:hover { filter: brightness(1.05); box-shadow: 0 10px 22px rgba(29,78,216,.3); transform: translateY(-1px); }
+
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold border border-gray-300 text-gray-800 transition;
+}
+.btn-outline:hover {
+  background: #fff;
+  color: var(--color-primary-700);
+  border-color: var(--color-primary-400);
+  box-shadow: 0 8px 18px rgba(37,99,235,.15);
+  transform: translateY(-1px);
+}
+
+.btn-ghost-white {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-white border border-white/60 transition;
+}
+.btn-ghost-white:hover {
+  background-color: rgba(255,255,255,.15);
+  box-shadow: 0 8px 18px rgba(255,255,255,.24);
+  transform: translateY(-1px);
+}
+
+.btn-store {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold border border-gray-300 text-gray-800 transition;
+  background: white;
+}
+.btn-store:hover {
+  background: var(--color-primary-50);
+  color: var(--color-primary-700);
+  border-color: var(--color-primary-300);
+  box-shadow: 0 8px 18px rgba(37,99,235,.15);
+  transform: translateY(-2px);
+}
+
+/* Cards subtle hover */
+.card {
+  @apply rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-gray-50 p-5 sm:p-6 shadow-sm transition;
+}
+.card:hover { box-shadow: 0 10px 28px rgba(15,23,42,.08); transform: translateY(-2px); }
+
+/* Hamburger icon visibility on mixed background */
+.btn-hamburger {
+  @apply md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white shadow-sm;
+}
+
+.btn-wa {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-white transition;
+  background-image: linear-gradient(135deg,#25D366,#128C7E);
+  box-shadow: 0 6px 14px rgba(18,140,126,.25);
+}
+.btn-wa:hover { filter: brightness(1.06); box-shadow: 0 10px 22px rgba(18,140,126,.35); transform: translateY(-1px); }
+

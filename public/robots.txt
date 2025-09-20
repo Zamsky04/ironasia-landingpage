@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ironasia.id/sitemap.xml
