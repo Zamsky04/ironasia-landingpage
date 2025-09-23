@@ -61,6 +61,17 @@
 
   --color-accent-500:#f59e0b;
   --gradient-hero: linear-gradient(120deg, var(--color-primary-700), var(--color-primary-500));
+
+    --color-accent-50:  #ffecee;
+  --color-accent-100: #ffd6da;
+  --color-accent-200: #ffb3b8;
+  --color-accent-300: #ff8a92;
+  --color-accent-400: #ff5965;
+  --color-accent-500: #ff3242;
+  --color-accent-600: #e61627; 
+  --color-accent-700: #bd0f1e;
+  --color-accent-800: #960d19;
+  --color-accent-900: #7b0c16;
 }
 
 @font-face {
@@ -212,4 +223,12 @@ body.drawer-open [id*="chat"] {
   .brand-wordmark { font-size: 1.25rem; }
 }
 
+/* Matikan watermark jika perlu: tambahkan class "wm-off" pada section */
+.wm-off::after { content: none !important; }
 
+/* Lembutkan watermark: pakai class "wm-soft" (dipakai di RFQFlow di atas) */
+.wm-soft::after {
+  opacity: .03;                /* dari .06 → .03 */
+  background-size: min(70vw, 560px);
+  filter: grayscale(100%) contrast(1.02);
+}

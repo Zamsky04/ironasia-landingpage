@@ -4,54 +4,77 @@ export default function Features() {
   const { tn } = useI18n();
   const items = tn("features.list") || [];
 
-  // sudah 10 item → sesuaikan icon
+  // 10 ikon (fallback -> ✨)
   const icons = [
-    "🌐", // Market luas
-    "🛡️", // Supplier tervalidasi
-    "⚡", // Efisiensi 40%
-    "💰", // Transparansi harga
-    "🔄", // Fleksibilitas penjualan
-    "📊", // Data & insight
-    "📦", // Likuidasi stok lama
-    "🤝", // Customer care
-    "🔔", // Notifikasi real-time
-    "🏆", // Branding & kredibilitas
+    "🌐","🛡️","⚡","💰","🔄","📊","📦","🤝","🔔","🏆",
   ];
 
   return (
     <section
       id="fitur"
-      className="py-14 sm:py-16 md:py-20 bg-white ia-watermark"
+      className="relative py-16 md:py-20 bg-white ia-watermark"
       data-pos="center"
       data-size="lg"
     >
+      {/* garis pemisah halus di atas */}
+      <div
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-200/70 to-transparent"
+        aria-hidden
+      />
+
       <div className="container-fluid">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-center">
-          {tn("features.title")}
-        </h2>
-        <p className="mt-2 text-center text-muted-600 max-w-2xl mx-auto">
-          {tn("features.desc")}
-        </p>
+        {/* heading */}
+        <div className="text-center">
+
+        <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold">
+            {tn("features.title")}
+          </h2>
+          <p className="mt-2 text-muted-600 max-w-2xl mx-auto">
+            {tn("features.desc")}
+          </p>
+        </div>
+
+        {/* cards */}
         <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {items.map(([title, desc], idx) => (
-            <div
+            <article
               key={idx}
-              className="rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-gray-50 p-5 sm:p-6 shadow-sm hover:shadow-lg transition z-context"
+              className="relative card hover:shadow-lg hover:-translate-y-1 transition
+                         ring-1 ring-gray-200/70 hover:ring-primary-300/80"
             >
+              {/* icon circle */}
               <div
-                className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center mb-3 sm:mb-4"
+                className="w-11 h-11 rounded-xl flex items-center justify-center mb-3 sm:mb-4
+                           ring-1 ring-primary-200/70"
                 style={{
-                  background: "var(--color-primary-50)",
+                  background:
+                    "linear-gradient(135deg, var(--color-primary-50), var(--color-accent-50))",
                   color: "var(--color-primary-700)",
                 }}
               >
-                <span aria-hidden>{icons[idx] || "✨"}</span>
+                <span aria-hidden className="text-base sm:text-lg">
+                  {icons[idx] || "✨"}
+                </span>
               </div>
+
+              {/* text */}
               <h3 className="font-semibold text-base sm:text-lg">{title}</h3>
               <p className="mt-1.5 text-sm text-muted-600">{desc}</p>
-            </div>
+
+              {/* underline gradient halus saat hover */}
+              <div
+                className="pointer-events-none mt-4 h-px bg-gradient-to-r from-transparent via-primary-200/50 to-transparent
+                           opacity-0 group-hover:opacity-100 transition"
+              />
+            </article>
           ))}
         </div>
+
+        {/* garis penutup halus di bawah */}
+        <div
+          className="mt-10 h-px bg-gradient-to-r from-transparent via-accent-200/70 to-transparent"
+          aria-hidden
+        />
       </div>
     </section>
   );
