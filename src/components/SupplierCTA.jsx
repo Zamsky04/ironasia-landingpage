@@ -14,7 +14,7 @@ export default function SupplierCTA() {
                 {bullets.map((b,i)=><li key={i}>{b}</li>)}
               </ul>
               <div className="mt-6 flex gap-3">
-                <a href="http://45.158.10.75:8989/" className="btn-primary rounded-xl px-5 py-3 font-semibold text-white bg-primary-600 hover:opacity-95 transition">{t("supplier.c1")}</a>
+                <a href="https://ironasia.com/" className="btn-primary rounded-xl px-5 py-3 font-semibold text-white bg-primary-600 hover:opacity-95 transition">{t("supplier.c1")}</a>
                 <a href="#faq" className="btn-outline rounded-xl px-5 py-3 font-semibold border border-gray-300 text-gray-800 hover:bg-gray-50 transition">{t("supplier.c2")}</a>
               </div>
             </div>
