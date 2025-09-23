@@ -6,6 +6,7 @@ import Features from './components/Features.jsx';
 import RFQFlow from './components/RFQFlow.jsx';
 import Showcase from './components/Showcase.jsx';
 import SupplierCTA from './components/SupplierCTA.jsx';
+import About from './components/About.jsx';
 import FAQ from './components/FAQ.jsx';
 import DownloadSection from './components/DownloadSection.jsx';
 import Footer from './components/Footer.jsx';
@@ -21,6 +22,7 @@ function Page() {
     <main className="text-slate-800">
       <Header />
       <Hero />
+      <About />
       <Features />
       <RFQFlow />
       <Showcase />

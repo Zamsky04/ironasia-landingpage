@@ -40,6 +40,7 @@ export default function Header() {
 
         {/* nav desktop */}
         <nav className="hidden md:flex items-center gap-6 text-sm text-gray-600" aria-label="Primary">
+          <a href="#about" className="hover:text-primary-600">{t("nav.about")}</a>
           <a href="#fitur" className="hover:text-primary-600">{t("nav.fitur")}</a>
           <a href="#alur" className="hover:text-primary-600">{t("nav.alur")}</a>
           <a href="#showcase" className="hover:text-primary-600">{t("nav.sorotan")}</a>
@@ -51,7 +52,7 @@ export default function Header() {
         {/* kanan */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <LanguageSwitcher />
-          {/* <a href="http://45.158.10.75:8989/" className="hidden xl:inline-flex btn-primary" rel="noopener">{t("nav.buka")}</a> */}
+          {/* <a href="https://ironasia.com/" className="hidden xl:inline-flex btn-primary" rel="noopener">{t("nav.buka")}</a> */}
         </div>
       </div>
 
@@ -83,12 +84,69 @@ export default function Header() {
           {/* isi menu (scrollable) */}
           <nav className="min-h-0 overflow-y-auto p-4" aria-label="Mobile">
             <ul className="space-y-1 text-base text-slate-800">
-              <li><a onClick={()=>setOpen(false)} href="#fitur"    className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50">✨ {t("nav.fitur")}</a></li>
-              <li><a onClick={()=>setOpen(false)} href="#alur"     className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50">📦 {t("nav.alur")}</a></li>
-              <li><a onClick={()=>setOpen(false)} href="#showcase" className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50">🎯 {t("nav.sorotan")}</a></li>
-              <li><a onClick={()=>setOpen(false)} href="#faq"      className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50">❓ {t("nav.faq")}</a></li>
-              <li><a onClick={()=>setOpen(false)} href="#download" className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50">⬇️ {t("nav.download")}</a></li>
-              <li><a onClick={()=>setOpen(false)} href="#kontak"   className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50">📞 {t("nav.kontak")}</a></li>
+              <li>
+                <a
+                  onClick={() => setOpen(false)}
+                  href="#about"
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50"
+                >
+                  🏢 {t("nav.about")}
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => setOpen(false)}
+                  href="#fitur"
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50"
+                >
+                  ✨ {t("nav.fitur")}
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => setOpen(false)}
+                  href="#alur"
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50"
+                >
+                  📦 {t("nav.alur")}
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => setOpen(false)}
+                  href="#showcase"
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50"
+                >
+                  🎯 {t("nav.sorotan")}
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => setOpen(false)}
+                  href="#faq"
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50"
+                >
+                  ❓ {t("nav.faq")}
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => setOpen(false)}
+                  href="#download"
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50"
+                >
+                  ⬇️ {t("nav.download")}
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => setOpen(false)}
+                  href="#kontak"
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50"
+                >
+                  📞 {t("nav.kontak")}
+                </a>
+              </li>
             </ul>
 
             <div className="mt-4 border-t pt-4">
@@ -101,7 +159,7 @@ export default function Header() {
           <div className="p-4 border-t">
             <div className="grid grid-cols-2 gap-2">
               <a
-                href="http://45.158.10.75:8989/"
+                href="https://ironasia.com/"
                 className="btn-primary-compact"
                 rel="noopener"
                 onClick={()=>setOpen(false)}
