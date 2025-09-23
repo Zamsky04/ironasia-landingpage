@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img src="/logo.png" alt="Logo IronAsia" className="h-8 w-auto" />
-            <span className="font-semibold">IronAsia</span>
+            <span className="brand-wordmark">IronAsia</span>
           </div>
           <p className="text-sm text-slate-600">© {new Date().getFullYear()} IronAsia. All rights reserved.</p>
           <nav className="text-sm text-slate-600 flex gap-4" aria-label="Footer">
