@@ -43,21 +43,21 @@ export const TRANSLATIONS = {
       title: "Alur RFQ B2B IronAsia",
       desc: "Langkah-langkah sederhana: tulis kebutuhan → kirim → terima & bandingkan penawaran → pilih terbaik.",
       steps: [
-        ["1) Tulis Kebutuhan Anda",
+        ["Tulis Kebutuhan Anda",
          "Jelaskan barang/jasa yang dicari dengan bahasa sederhana: nama produk, fungsi, merek (opsional), spesifikasi penting (ukuran/tipe/standar), jumlah, lokasi kirim, dan target waktu. Lampirkan foto/daftar spesifikasi jika ada."],
-        ["2) Kirim RFQ ke Supplier Relevan",
+        ["Kirim RFQ ke Supplier Relevan",
          "Sistem kami menyalurkan RFQ Anda ke supplier yang sesuai kategori dan area layanan. Semua supplier menerima informasi yang sama untuk memastikan perbandingan adil."],
-        ["3) Supplier Mengecek & Mengajukan Penawaran",
+        ["Supplier Mengecek & Mengajukan Penawaran",
          "Supplier memeriksa stok/lead time lalu mengirim penawaran berisi harga, estimasi pengiriman, merek/alternatif, garansi, dan catatan ongkir/instalasi bila perlu."],
-        ["4) Ajukan Pertanyaan (Opsional)",
+        ["Ajukan Pertanyaan (Opsional)",
          "Kalau ada detail yang kurang jelas, gunakan kolom pesan untuk tanya: contoh pengganti merek, standar SNI/ISO, MOQ, atau opsi kualitas berbeda."],
-        ["5) Bandingkan Semua Penawaran",
+        ["Bandingkan Semua Penawaran",
          "Bandingkan harga, waktu pengiriman, syarat pembayaran, garansi, reputasi supplier, dan ulasan. Tampilan perbandingan dibuat rapi agar Anda cepat mengambil keputusan."],
-        ["6) Negosiasi Ringan",
+        ["Negosiasi Ringan",
          "Anda bisa minta revisi: ubah jumlah, minta diskon, ganti merek, atau sesuaikan SLA. Supplier mengirim penawaran final setelah disepakati."],
-        ["7) Putuskan Pemenang",
+        ["Putuskan Pemenang",
          "Pilih supplier terbaik sesuai prioritas Anda (harga, kecepatan, kualitas). Sistem akan meminta konfirmasi sebelum lanjut ke pesanan."],
-        ["8) Lanjut ke PO & Tracking",
+        ["Lanjut ke PO & Tracking",
          "Setelah memilih, buat PO (Purchase Order). Pantau status pengiriman, unggah bukti, dan selesaikan pembayaran sesuai ketentuan."]
       ],
       tipsTitle: "Tips singkat agar RFQ Anda cepat mendapat penawaran bagus:",
@@ -148,14 +148,14 @@ export const TRANSLATIONS = {
       ["Branding & Credibility","Suppliers build professional profiles with verified company data."]
     ]},
     rfq:{ title:"IronAsia B2B RFQ Flow", desc:"Write needs → send → receive & compare quotes → choose the winner.", steps:[
-      ["1) Describe Your Need","Name, key specs, quantity, ship-to location, timing. Add brand (optional) and attachments if any."],
-      ["2) Distribute to Relevant Suppliers","The system routes your RFQ to vetted, relevant suppliers."],
-      ["3) Suppliers Respond","They check stock/lead time and reply with price, ETA, warranty, shipping notes."],
-      ["4) Ask Questions (Optional)","Clarify brand alternatives, standards, MOQ, etc."],
-      ["5) Compare Quotes","Side-by-side table: price, lead time, warranty, terms, reputation."],
-      ["6) Light Negotiation","Request revisions: quantity, discount, brand change, SLA."],
-      ["7) Select Winner","Choose based on your priority: price, speed, or quality."],
-      ["8) PO & Tracking","Issue PO and track fulfillment and documents."]
+      ["Describe Your Need","Name, key specs, quantity, ship-to location, timing. Add brand (optional) and attachments if any."],
+      ["Distribute to Relevant Suppliers","The system routes your RFQ to vetted, relevant suppliers."],
+      ["Suppliers Respond","They check stock/lead time and reply with price, ETA, warranty, shipping notes."],
+      ["Ask Questions (Optional)","Clarify brand alternatives, standards, MOQ, etc."],
+      ["Compare Quotes","Side-by-side table: price, lead time, warranty, terms, reputation."],
+      ["Light Negotiation","Request revisions: quantity, discount, brand change, SLA."],
+      ["Select Winner","Choose based on your priority: price, speed, or quality."],
+      ["PO & Tracking","Issue PO and track fulfillment and documents."]
     ],
     tipsTitle:"Quick tips for better quotes:",
     tips:["State must-have specs","Include quantity & ship-to location","Allow brand alternatives if possible","Set realistic delivery deadline","Share target price (optional)"]},
@@ -182,53 +182,161 @@ export const TRANSLATIONS = {
     footer:{ privacy:"Privacy Policy", terms:"Terms & Conditions", download:"Download" }
   },
 
-  /* ================= ZH (简体) ================= */
+  /* ================= ZH (简体) — refined/native ================= */
   zh: {
-    seo: { title: "IronAsia – 工业B2B平台：询价(RFQ)与认证供应商", desc: "IronAsia 是工业B2B采购平台：发送自定义询价、查找认证供应商，并快速透明地管理报价与订单。" },
-    nav:{ about:"关于我们", fitur:"功能", alur:"询价流程", sorotan:"亮点", faq:"常见问题", download:"下载", kontak:"联系我们", buka:"打开平台" },
-    hero:{ badge:"工业B2B采购平台", h1a:"更高效的工业采购", h1b:"来自智能询价", p:"创建自定义询价（规格、品牌、数量），一次发送给多个认证供应商。对比报价，选择最佳方案并高效推进。", cta1:"打开平台", cta2:"下载应用", trust1:"认证供应商", trust2:"安全与隐私", trust3:"快速响应", quote:"值得信赖的B2B平台：询价、工业目录与透明采购。" },
-    features:{ title:"为什么选择 IronAsia？", desc:"可信赖的B2B & B2C建材平台：更快、更安全、更透明。", list:[
-      ["更广阔的市场","连接全国乃至国际买家与供应商。"],
-      ["认证供应商","所有供应商都经过严格验证，确保交易安全。"],
-      ["效率提升40%","采购和分销比传统方式快40%。"],
-      ["透明价格","清晰的价格与质量，减少不公平风险。"],
-      ["销售灵活性","支持批发和零售销售。"],
-      ["数据与洞察","获取项目需求数据，优化业务策略。"],
-      ["库存清理","帮助更快地处理旧库存。"],
-      ["客户服务","买卖双方直接沟通，反馈更快速。"],
-      ["实时通知","随时随地跟踪询价、报价和订单。"],
-      ["品牌与信誉","供应商展示更专业的企业形象。"]
-    ]},
-    rfq:{ title:"IronAsia 询价流程", desc:"填写需求 → 分发供应商 → 接收并对比报价 → 选择中标方。", steps:[
-      ["1) 填写需求","名称、关键规格、数量、收货地与时间。可选品牌与附件。"],
-      ["2) 分发到相关供应商","系统路由至匹配的已认证供应商。"],
-      ["3) 供应商响应","反馈价格、交期、质保、运费等信息。"],
-      ["4) 提问澄清（可选）","确认替代品牌、标准、MOQ等。"],
-      ["5) 对比报价","表格并列展示：价格、交期、质保、条款等。"],
-      ["6) 轻量协商","请求修改：数量、折扣、品牌或SLA。"],
-      ["7) 选择中标","根据价格/速度/质量等优先级决定。"],
-      ["8) 发出PO并追踪","发出PO，跟踪履约与单据。"]
-    ],
-    tipsTitle:"快速获得好报价的小提示：",
-    tips:["写清必需规格","包含数量与收货地","尽量允许等效品牌","交期要合理","可提供目标价（可选）"]},
-    show:{ title:"连接您的业务", p:"借助活跃生态提升覆盖与效率。统一面板管理需求、报价与沟通。", a:"目录", b:"询价", c:"供应商" },
-    supplier:{ title:"加入成为供应商", p:"接收相关询价，拓展B2B网络并提升营收。", bullets:["公司资料与认证","上传目录并管理库存","用模板快速报价"], k1:"询价/每月", v1:"不定", k2:"品类", v2:"工业与MRO", k3:"方式", v3:"在线与邮件", k4:"支持", v4:"聊天与邮件", c1:"以供应商身份加入", c2:"了解更多" },
-    faq:{ title:"常见问题", list:[
-      ["什么是询价（RFQ）？","一次性向多家供应商发送价格请求，便于快速对比。"],
-      ["何时使用RFQ？","当需求已清晰。若需完整解决方案，建议RFP。"],
-      ["供应商需要哪些信息？","名称、关键规格、数量、收货地、时间与品牌要求等。"],
-      ["能指定品牌吗？","可以，或允许等效品牌以获得更多报价。"],
-      ["如何对比？","价格、交期、质保、运费、支付条款等并列显示。"],
-      ["不满意报价怎么办？","通过消息协商并请求修订。"],
-      ["是否收费？","基础使用通常免费。付费方案请联系团队。"],
-      ["数据安全吗？","采用业界最佳实践与基于角色的访问控制。"],
-      ["何时发PO？","选定中标并确认条款后。"],
-      ["是否保证质量？","供应商已认证，但仍建议核对规格并保留单据。"],
-      ["能导入清单吗？","CSV/Excel导入逐步开放；现可附加文件或粘贴规格。"],
-      ["我是新手不清楚规格","描述场景与限制，供应商可给出合适建议。"]
-    ]},
-    about:{ title:"关于我们", timelineTitle:"公司历程", timeline:["2020 – 概念诞生","2021-2024 – 平台开发","2025 – IronAsia 正式上线"], visionTitle:"愿景", vision:"成为印尼最大的建材电商平台，连接整个建筑生态系统。", missionTitle:"使命", mission:["提供便捷获取各类建材的途径。","确保价格与质量透明。","帮助承包商与零售商准时获得建材。","推动印尼建筑行业的数字化。","同时服务 B2B 与 B2C 混合需求。"], valuesTitle:"核心价值观", values:["诚信","效率","创新","协作","可持续性"] },
-    dl:{ title:"开始使用 IronAsia", p:"可通过网页或下载移动应用。", web:"打开网页平台", and:"下载 Android", ios:"下载 iOS" },
-    footer:{ privacy:"隐私政策", terms:"条款与条件", download:"下载" }
+    seo: {
+      title: "IronAsia – 工业 B2B 平台：询价（RFQ）与认证供应商",
+      desc: "IronAsia 是面向工业采购的 B2B 平台：发送自定义询价（RFQ），寻找认证供应商，并以更快捷、透明的方式管理报价与订单。"
+    },
+    nav: {
+      about: "关于我们",
+      fitur: "功能",
+      alur: "询价流程",
+      sorotan: "亮点",
+      faq: "常见问题",
+      download: "下载",
+      kontak: "联系我们",
+      buka: "打开平台"
+    },
+    hero: {
+      badge: "工业 B2B 采购平台",
+      h1a: "更高效的工业采购",
+      h1b: "借助智能询价",
+      p: "创建自定义询价（规格、品牌、数量），一次发送给多家认证供应商。对比报价，选择更优方案，高效推进采购流程。",
+      cta1: "打开平台",
+      cta2: "下载应用",
+      trust1: "认证供应商",
+      trust2: "安全与隐私",
+      trust3: "快速响应",
+      quote: "值得信赖的 B2B 平台：智能询价、丰富工业目录与透明采购流程。"
+    },
+    features: {
+      title: "为什么选择 IronAsia？",
+      desc: "值得信赖的 B2B/B2C 建材与工业品平台：更快、更安全、更透明。",
+      list: [
+        ["更广阔的市场","连接全国乃至国际的买家与供应商，拓展业务机会。"],
+        ["认证供应商","严格审核供应商资质，保障交易安全与质量。"],
+        ["效率提升 40%","采购与分发效率较传统方式最高可提升 40%。"],
+        ["价格透明","价格与质量信息清晰可追溯，降低不公平风险。"],
+        ["销售灵活","同时支持批发与零售销售场景。"],
+        ["数据洞察","获取项目需求趋势，为业务决策提供参考。"],
+        ["库存清理","更快处置滞销库存，提升仓储利用率。"],
+        ["客户关怀","买卖双方直接沟通，反馈更及时。"],
+        ["实时通知","随时跟踪询价、报价与订单状态。"],
+        ["品牌与信誉","完善企业资料，塑造专业可信的供应商形象。"]
+      ]
+    },
+    rfq: {
+      title: "IronAsia 询价（RFQ）流程",
+      desc: "填写需求 → 分发供应商 → 接收并对比报价 → 选择中选供应商。",
+      steps: [
+        ["填写采购需求",
+        "以简明语言描述所需商品/服务：名称、用途、关键规格（尺寸/型号/标准）、数量、收货地点与期望时间。可附图片或规格清单。"],
+        ["分发给匹配供应商",
+        "系统将 RFQ 路由至匹配品类与服务区域的认证供应商，确保信息一致、便于公平对比。"],
+        ["供应商提交报价",
+        "供应商确认库存/交期后，提供报价、预计发货时间、品牌/替代方案、质保与运费/安装说明（如适用）。"],
+        ["提问与澄清（可选）",
+        "就品牌替代、标准（如 SNI/ISO）、最小起订量（MOQ）或不同品质档次进行沟通。"],
+        ["对比全部报价",
+        "对比价格、交期、付款条款、质保、供应商口碑与评价；表格化呈现，便于快速决策。"],
+        ["轻量协商",
+        "可请求调整：数量、折扣、品牌或服务级别（SLA）；供应商据此提交最终报价。"],
+        ["选择中选供应商",
+        "依据价格、时效或质量等优先级选择最合适的供应商，系统将引导确认下一步。"],
+        ["发出 PO 并追踪",
+        "确认后生成采购订单（PO），跟踪发货与收货流程，上传凭证并按约完成结算。"]
+      ],
+      tipsTitle: "提高优质报价命中率的小提示：",
+      tips: [
+        "明确“必需”规格（如电压、直径、材料标准）。",
+        "写清数量与收货地点；运费常影响最终报价。",
+        "若以价格为先，可允许等效品牌以扩大选择面。",
+        "设定合理的交期与到货时间。",
+        "如有目标价，可作为参考给出（可选）。"
+      ],
+      ctaBuyer: "开始提交询价",
+      ctaSupplier: "成为供应商"
+    },
+    show: {
+      title: "连接您的业务",
+      p: "借助活跃的买卖双方生态，拓展覆盖与提升效率。在同一控制台中管理需求、报价与沟通。",
+      a: "目录",
+      b: "询价",
+      c: "供应商"
+    },
+    supplier: {
+      title: "加入成为供应商",
+      p: "接收匹配的 RFQ，拓展 B2B 网络，提升营收。",
+      bullets: ["企业资料与认证","上传目录并管理库存","使用模板快速报价"],
+      k1: "每月询价量",
+      v1: "因类目而异",
+      k2: "品类",
+      v2: "工业与 MRO",
+      k3: "方式",
+      v3: "在线与邮件",
+      k4: "支持",
+      v4: "聊天与邮件",
+      c1: "以供应商身份加入",
+      c2: "了解更多"
+    },
+    faq: {
+      title: "常见问题",
+      list: [
+        ["什么是 RFQ？",
+        "RFQ（询价）是一次性向多家供应商发出价格与条件请求，便于快速对比与选择。"],
+        ["何时使用 RFQ？",
+        "当需求已比较明确时更合适；若是方案型项目，请考虑 RFP（方案征集）。"],
+        ["供应商需要哪些信息？",
+        "名称、关键规格、数量、收货地点与时间要求，以及是否必须指定品牌等。"],
+        ["能否指定品牌？",
+        "可以；如允许等效品牌，往往能获得更具竞争力的报价。"],
+        ["如何对比报价？",
+        "以并列表格呈现价格、交期、质保、运费与付款条款等，清晰直观。"],
+        ["如果报价不合适怎么办？",
+        "通过消息沟通，提出修改或进行轻量协商。"],
+        ["是否收费？",
+        "基础使用通常免费；若需高级服务，请联系团队。"],
+        ["数据是否安全？",
+        "采用行业最佳实践与基于角色的访问控制，仅相关方可查看。"],
+        ["何时发出 PO？",
+        "选定中选供应商并确认条款后，即可生成采购订单（PO）。"],
+        ["是否保证商品质量？",
+        "供应商已通过资质审核，但仍建议复核规格并保留交易凭证。"],
+        ["能否导入需求清单？",
+        "CSV/Excel 导入将逐步开放；当前可附加文件或粘贴规格。"],
+        ["我是新手不确定规格怎么办？",
+        "描述使用场景与约束（如“50 m² 空间，日用 8 小时”），供应商可给出合适建议。"]
+      ]
+    },
+    about: {
+      title: "关于我们",
+      timelineTitle: "公司历程",
+      timeline: ["2020 – 概念提出","2021–2024 – 平台研发","2025 – IronAsia 正式上线"],
+      visionTitle: "愿景",
+      vision: "成为印尼领先的建材电商平台，连接整个建筑产业生态。",
+      missionTitle: "使命",
+      mission: [
+        "提供便捷获取多品类建材的途径。",
+        "确保价格与质量透明可控。",
+        "帮助承包商与零售商按时获得所需材料。",
+        "推动印尼建筑行业数字化升级。",
+        "以混合模式同时服务 B2B 与 B2C 场景。"
+      ],
+      valuesTitle: "核心价值观",
+      values: ["诚信","效率","创新","协作","可持续性"]
+    },
+    dl: {
+      title: "开始使用 IronAsia",
+      p: "可通过网页访问，或下载移动端应用。",
+      web: "打开网页平台",
+      and: "下载 Android",
+      ios: "下载 iOS"
+    },
+    footer: {
+      privacy: "隐私政策",
+      terms: "条款与条件",
+      download: "下载"
+    }
   }
 };

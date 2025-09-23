@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import React from "react";
 import { I18nCtx } from "./I18nContext.js";
-
+    
 function highlightBrand(text) {
   if (!text || typeof text !== "string") return text;
   const parts = text.split(/(IronAsia|1ronAsia)/g);
