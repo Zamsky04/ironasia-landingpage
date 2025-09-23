@@ -111,3 +111,57 @@ html, body {
 }
 .btn-wa:hover { filter: brightness(1.06); box-shadow: 0 10px 22px rgba(18,140,126,.35); transform: translateY(-1px); }
 
+/* Safe area helpers */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+.pt-safe { padding-top: env(safe-area-inset-top); }
+
+/* Drawer overlay (jaga di atas segalanya) */
+.drawer-overlay { z-index: 1000; }
+
+/* Scroll halus di iOS */
+aside[role="dialog"] { -webkit-overflow-scrolling: touch; }
+
+/* Sembunyikan/override widget melayang saat drawer open */
+body.drawer-open .floating-widget,
+body.drawer-open .wa-chat-bubble,
+body.drawer-open .wa-widget,
+body.drawer-open .tawk-button,
+body.drawer-open .tawk-bubble,
+body.drawer-open .elfsight-app,
+body.drawer-open [class*="whatsapp"],
+body.drawer-open [id*="whatsapp"],
+body.drawer-open [class*="chat"],
+body.drawer-open [id*="chat"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Tombol compact */
+.btn-primary-compact {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold text-white transition;
+  background-image: linear-gradient(135deg, var(--color-primary-700), var(--color-primary-600));
+  box-shadow: 0 4px 12px rgba(37,99,235,.22);
+}
+.btn-primary-compact:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+.btn-wa-compact {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold text-white transition;
+  background-image: linear-gradient(135deg,#25D366,#128C7E);
+  box-shadow: 0 4px 12px rgba(18,140,126,.22);
+}
+.btn-wa-compact:hover { filter: brightness(1.06); transform: translateY(-1px); }
+
+/* Wordmark konsisten */
+.brand-wordmark {
+  font-family: var(--font-sutro);
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  font-size: 1.125rem;
+}
+@media (min-width: 640px){
+  .brand-wordmark { font-size: 1.25rem; }
+}
+
+
