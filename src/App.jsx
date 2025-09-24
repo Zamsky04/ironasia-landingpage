@@ -25,7 +25,7 @@ function Page() {
       <About />
       <Features />
       <RFQFlow />
-      <Showcase />
+      {/* <Showcase /> */}
       <SupplierCTA />
       <FAQ />
       <DownloadSection />
