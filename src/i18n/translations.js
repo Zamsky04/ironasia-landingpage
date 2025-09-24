@@ -80,32 +80,67 @@ export const TRANSLATIONS = {
     /* ======= FAQ (ditambah & diperjelas) ======= */
     faq: {
       title: "Pertanyaan Umum",
-      list: [
-        ["Apa itu RFQ di IronAsia?",
-         "RFQ (Request for Quotation) adalah permintaan penawaran harga. Anda menulis kebutuhan (spesifikasi/jumlah/lokasi), sistem mengirim ke banyak supplier sekaligus, lalu Anda membandingkan penawaran."],
-        ["Kapan saya sebaiknya pakai RFQ?",
-         "Gunakan bila kebutuhan sudah jelas (contoh: tipe pompa, ukuran pipa, kapasitas mesin). Untuk proyek kompleks yang butuh solusi menyeluruh, gunakan RFP (proposal)."],
-        ["Apa saja yang wajib saya tulis agar supplier paham?",
-         "Minimal: nama barang, spesifikasi penting, jumlah, lokasi pengiriman, dan waktu yang Anda butuhkan. Tambahkan merek/seri (bila wajib), foto/lampiran, serta batasan kualitas jika ada."],
-        ["Apakah saya bisa menyebut merek tertentu?",
-         "Boleh. Anda juga bisa membuka alternatif merek dengan tingkat kualitas setara agar lebih banyak penawaran masuk."],
-        ["Bagaimana perbandingan penawaran ditampilkan?",
-         "Kami menampilkan tabel ringkas (harga, lead time, garansi, catatan ongkir, dll). Anda bisa mengurutkan dan menyaring agar keputusan lebih cepat."],
-        ["Bagaimana jika penawaran belum sesuai?",
-         "Gunakan kolom pesan/negosiasi: ubah jumlah, minta diskon, ganti merek, atau tanya ketersediaan stok. Supplier akan kirim revisi."],
-        ["Apakah ada biaya menggunakan RFQ?",
-         "Akun dasar umumnya gratis. Skema biaya lain (mis. layanan premium) dapat berlaku — hubungi tim kami untuk detail."],
-        ["Apakah data RFQ saya aman?",
-         "Kami menerapkan praktik keamanan terbaik dan kontrol akses berbasis peran. Hanya pihak relevan yang dapat melihat detail RFQ Anda."],
-        ["Kapan saya menerbitkan PO?",
-         "Setelah memilih penawaran pemenang dan menyepakati syarat (harga, pengiriman, pembayaran). Sistem membantu membuat PO dan melacak pesanan."],
-        ["Apakah IronAsia menjamin kualitas barang?",
-         "Supplier melalui proses verifikasi. Namun, Anda tetap perlu memeriksa spesifikasi, uji fungsi (jika perlu), dan menyimpan dokumentasi transaksi."],
-        ["Bisakah saya mengimpor daftar kebutuhan dari file?",
-         "Dukungan impor CSV/Excel tersedia secara bertahap. Untuk sekarang, Anda dapat menempel daftar spesifikasi ke kolom catatan atau melampirkan file."],
-        ["Bagaimana kalau saya pemula dan belum tahu spesifikasi tepat?",
-         "Tulis masalah dan tujuan penggunaan (contoh: 'butuh blower untuk ruang 50 m², 8 jam/hari'). Supplier dapat menyarankan opsi, lalu Anda pilih yang paling cocok."]
-      ]
+      // ⬇️ struktur baru: dikelompokkan
+      groups: {
+        rfq: [
+          ["Apa itu RFQ?",
+          "RFQ (Request for Quotation) adalah permintaan penawaran harga. Anda menuliskan kebutuhan (spesifikasi, jumlah, lokasi), lalu sistem mengirimkannya ke banyak supplier sekaligus agar mudah dibandingkan."],
+          ["Kapan sebaiknya menggunakan RFQ?",
+          "Gunakan RFQ bila kebutuhan Anda sudah jelas: tipe, ukuran, jumlah, dan waktu target. Jika membutuhkan solusi menyeluruh (misalnya desain atau instalasi kompleks), gunakan RFP (Request for Proposal)."],
+          ["Apa yang wajib saya tulis di RFQ?",
+          "Cantumkan nama barang/jasa, spesifikasi penting, jumlah, lokasi pengiriman, dan waktu kebutuhan. Bisa juga menambahkan merek tertentu, foto/lampiran, atau batasan kualitas."],
+          ["Bagaimana cara membandingkan penawaran?",
+          "Semua penawaran ditampilkan berdampingan: harga, lead time, garansi, ongkos kirim, dan syarat pembayaran. Anda dapat menyaring serta mengurutkan untuk memudahkan pilihan."],
+          ["Bagaimana jika penawaran belum sesuai?",
+          "Gunakan kolom pesan untuk bertanya atau bernegosiasi: ubah jumlah, minta diskon, ganti merek setara, atau minta estimasi pengiriman lain."],
+          ["Apakah ada biaya?",
+          "Akun dasar gratis. Untuk layanan premium (misalnya dukungan prioritas), biaya dapat berlaku sesuai ketentuan."]
+        ],
+        app: [
+          ["Apakah tersedia aplikasi mobile?",
+          "Ya. IronAsia memiliki aplikasi mobile agar Anda bisa memantau RFQ, menerima notifikasi penawaran, dan berkomunikasi langsung dengan supplier lewat ponsel."],
+          ["Bagaimana cara login di aplikasi?",
+          "Gunakan email dan kata sandi yang sama seperti di web. Kami juga mendukung login cepat melalui OTP yang dikirim ke email Anda."],
+          ["Apakah saya bisa mengunggah file lewat aplikasi?",
+          "Bisa. Anda dapat melampirkan PDF, foto produk, atau file spreadsheet kecil saat membuat RFQ."],
+          ["Mengapa saya tidak menerima notifikasi di aplikasi?",
+          "Pastikan izin notifikasi di ponsel sudah aktif, dan periksa apakah notifikasi aplikasi IronAsia tidak dalam kondisi dibisukan."]
+        ],
+        web: [
+          ["Apa itu website IronAsia?",
+          "Website resmi IronAsia ada di https://ironasia.com. Di sana Anda bisa melihat informasi, fitur, dan mulai mengajukan RFQ (Request for Quotation) secara online."],
+          ["Bagaimana cara mulai menggunakan web IronAsia?",
+          "1. Buka https://ironasia.com.\n2. Klik tombol 'Daftar' untuk membuat akun baru atau 'Masuk' jika sudah punya akun.\n3. Setelah login, Anda bisa membuat RFQ, melihat penawaran supplier, atau mengelola pesanan."],
+          ["Apakah saya perlu akun untuk mencoba?",
+          "Ya, untuk bisa mengajukan RFQ atau menerima penawaran, Anda perlu akun. Pendaftaran cepat dengan email dan data dasar."],
+          ["Fitur apa saja yang tersedia di web?",
+          "Di web, Anda bisa: membuat RFQ, mencari supplier, membandingkan penawaran, mengirim pesan ke supplier, dan melacak status pesanan."],
+          ["Apakah web IronAsia bisa diakses di HP?",
+          "Bisa. Website IronAsia mendukung tampilan responsif, jadi bisa dibuka dari komputer maupun ponsel tanpa perlu aplikasi."],
+          ["Bagaimana kalau saya hanya ingin lihat-lihat dulu?",
+          "Tanpa login, Anda masih bisa melihat halaman informasi umum tentang fitur IronAsia. Namun untuk ajukan RFQ atau interaksi dengan supplier, Anda harus login dulu."]
+        ],
+        supplier: [
+          ["Bagaimana cara menjadi supplier di IronAsia?",
+          "Anda harus melakukan registrasi akun supplier. Proses ini memerlukan unggahan dokumen resmi seperti NIB (Nomor Induk Berusaha) dan persetujuan atas syarat & ketentuan IronAsia."],
+          ["Apakah saya bisa merevisi penawaran?",
+          "Bisa. Anda dapat mengirim revisi harga, lead time, atau alternatif merek selama RFQ belum ditutup."],
+          ["Apakah menerima RFQ berbayar?",
+          "Menerima RFQ relevan gratis. Namun tersedia paket promosi dan fitur unggulan yang bersifat opsional."],
+          ["Bagaimana meningkatkan peluang menang?",
+          "Respon cepat, jelaskan stok dan lead time secara rinci, sertakan garansi atau layanan purna jual, serta tawarkan alternatif setara bila produk utama tidak tersedia."]
+        ],
+        customer: [
+          ["Bagaimana cara menjadi customer di IronAsia?",
+          "Registrasi akun customer cukup dengan mengunggah KTP sebagai identitas resmi dan menyetujui syarat & ketentuan IronAsia."],
+          ["Bagaimana memastikan kualitas barang?",
+          "Gunakan supplier yang sudah terverifikasi, periksa spesifikasi di penawaran, minta surat garansi atau COA bila perlu, dan simpan bukti transaksi."],
+          ["Kapan saya harus menerbitkan PO?",
+          "Setelah memilih penawaran pemenang dan menyepakati harga, pengiriman, serta pembayaran. Sistem IronAsia akan membantu membuat PO dan melacak statusnya."],
+          ["Apakah data saya aman?",
+          "Kami menerapkan praktik keamanan terbaik dengan kontrol akses berbasis peran. Hanya pihak yang berwenang yang dapat melihat detail RFQ Anda."]
+        ]
+      }
     },
 
     about: {
@@ -161,20 +196,70 @@ export const TRANSLATIONS = {
     tips:["State must-have specs","Include quantity & ship-to location","Allow brand alternatives if possible","Set realistic delivery deadline","Share target price (optional)"]},
     show:{ title:"Connect Your Business", p:"Expand reach & efficiency with an active buyer-supplier ecosystem. Manage requests, quotes and communication from a single dashboard.", a:"Catalog", b:"RFQ", c:"Suppliers" },
     supplier:{ title:"Join as a Supplier", p:"Receive relevant RFQs, expand your B2B network, and grow revenue.", bullets:["Company profile & verification","Upload catalog & manage stock","Quick quotes with templates"], k1:"RFQs / month", v1:"Varies", k2:"Category", v2:"Industrial & MRO", k3:"Method", v3:"Online & email", k4:"Support", v4:"Chat & email", c1:"Join as a supplier", c2:"Learn More" },
-    faq:{ title:"Frequently Asked Questions", list:[
-      ["What is an RFQ on IronAsia?","A price request sent to multiple suppliers at once for easy comparison."],
-      ["When should I use an RFQ?","When your need is clear. For complex solution work, use an RFP."],
-      ["What do suppliers need to know?","Name, key specs, quantity, ship-to location, timing, and any brand requirement."],
-      ["Can I require a specific brand?","Yes, or allow equivalents for more competitive quotes."],
-      ["How are quotes compared?","Side-by-side table: price, lead time, warranty, shipping, payment terms."],
-      ["If quotes don’t fit?","Use messages to request revisions or negotiate."],
-      ["Any fees?","Basic usage is generally free. Contact our team for premium options."],
-      ["Is my data secure?","We apply best-practice security and role-based access control."],
-      ["When do I issue a PO?","After you pick a winner and confirm terms."],
-      ["Do you guarantee product quality?","Suppliers are verified, but you should still validate specs and keep documentation."],
-      ["Can I import a list?","CSV/Excel import is rolling out; meanwhile attach files or paste specs."],
-      ["I’m new and unsure of specs.","Describe your use case and constraints—suppliers can suggest suitable options."]
-    ]},
+    faq: {
+      title: "Frequently Asked Questions",
+      groups: {
+        rfq: [
+          ["What is an RFQ?", 
+          "RFQ (Request for Quotation) is a request for price quotation. You write down your needs (specifications, quantity, location), and the system sends them to many suppliers at once so you can easily compare."],
+          ["When should I use an RFQ?", 
+          "Use an RFQ when your needs are clear: type, size, quantity, and target time. If you require a comprehensive solution (e.g., design or complex installation), use an RFP (Request for Proposal)."],
+          ["What must I include in an RFQ?", 
+          "Include product/service name, key specifications, quantity, delivery location, and required date. You can also add a specific brand, photos/attachments, or quality requirements."],
+          ["How do I compare quotations?", 
+          "All quotations are displayed side by side: price, lead time, warranty, shipping cost, and payment terms. You can filter and sort to make selection easier."],
+          ["What if the quotation doesn’t fit?", 
+          "Use the message column to ask or negotiate: change the quantity, request a discount, suggest equivalent brands, or ask for another delivery estimate."],
+          ["Are there any fees?", 
+          "Basic accounts are free. Premium services (such as priority support) may be charged according to terms."]
+        ],
+        app: [
+          ["Is there a mobile app?", 
+          "Yes. IronAsia has a mobile app so you can track RFQs, receive quotation notifications, and communicate directly with suppliers via phone."],
+          ["How do I log in on the app?", 
+          "Use the same email and password as on the website. We also support quick login via OTP sent to your email."],
+          ["Can I upload files through the app?", 
+          "Yes. You can attach PDFs, product photos, or small spreadsheets when creating an RFQ."],
+          ["Why am I not receiving notifications in the app?", 
+          "Make sure notification permissions on your phone are enabled, and check that IronAsia notifications are not muted."]
+        ],
+        web: [
+          ["What is the IronAsia website?", 
+          "The official IronAsia website is at https://ironasia.com. There you can view information, features, and start submitting RFQs online."],
+          ["How do I start using IronAsia web?", 
+          "1. Open https://ironasia.com, 2. Click 'Sign Up' to create a new account or 'Login' if you already have one.\n3. After logging in, you can create RFQs, view supplier quotations, or manage orders."],
+          ["Do I need an account to try?", 
+          "Yes, to submit RFQs or receive quotations, you need an account. Registration is quick with just email and basic info."],
+          ["What features are available on the web?", 
+          "On the website, you can: create RFQs, search suppliers, compare quotations, message suppliers, and track order status."],
+          ["Can IronAsia web be accessed on mobile?", 
+          "Yes. The IronAsia website supports responsive design, so it can be opened from computers or phones without needing an app."],
+          ["What if I just want to browse first?", 
+          "Without logging in, you can still view general information about IronAsia’s features. But to submit RFQs or interact with suppliers, you must log in."]
+        ],
+        supplier: [
+          ["How do I become a supplier on IronAsia?", 
+          "You must register a supplier account. This process requires uploading official documents such as NIB (Business Identification Number) and accepting IronAsia’s terms & conditions."],
+          ["Can I revise my quotation?", 
+          "Yes. You can send revised prices, lead times, or alternative brands as long as the RFQ is still open."],
+          ["Is receiving RFQs paid?", 
+          "Receiving relevant RFQs is free. However, promotional packages and featured options are available optionally."],
+          ["How can I increase my chances of winning?", 
+          "Respond quickly, explain stock and lead time clearly, include warranty or after-sales service, and offer equivalent alternatives if the main product is unavailable."]
+        ],
+        customer: [
+          ["How do I become a customer on IronAsia?", 
+          "Register a customer account by uploading your ID card (KTP) as official identity and accepting IronAsia’s terms & conditions."],
+          ["How do I ensure product quality?", 
+          "Use verified suppliers, check specifications in quotations, request warranty letters or COAs if necessary, and keep transaction evidence."],
+          ["When should I issue a PO?", 
+          "After choosing the winning quotation and agreeing on price, delivery, and payment. IronAsia’s system will help you create a PO and track its status."],
+          ["Is my data safe?", 
+          "We apply best security practices with role-based access control. Only authorized parties can view your RFQ details."]
+        ]
+      }
+    },
+
 
     about:{ title:"About Us", timelineTitle:"Company Timeline", timeline:["2020 – Idea born","2021-2024 – Platform development","2025 – Official launch of IronAsia"], visionTitle:"Vision", vision:"To become Indonesia’s largest building materials e-commerce platform, connecting the entire construction ecosystem.", missionTitle:"Mission", mission:["Provide easy access to a wide range of building materials.","Ensure transparent pricing and quality.","Help contractors and retailers get materials on time.","Promote digitalization of Indonesia’s construction industry.","Serve both B2B and B2C needs in a hybrid way."], valuesTitle:"Core Values", values:["Integrity","Efficiency","Innovation","Collaboration","Sustainability"] },
 
@@ -282,32 +367,66 @@ export const TRANSLATIONS = {
     },
     faq: {
       title: "常见问题",
-      list: [
-        ["什么是 RFQ？",
-        "RFQ（询价）是一次性向多家供应商发出价格与条件请求，便于快速对比与选择。"],
-        ["何时使用 RFQ？",
-        "当需求已比较明确时更合适；若是方案型项目，请考虑 RFP（方案征集）。"],
-        ["供应商需要哪些信息？",
-        "名称、关键规格、数量、收货地点与时间要求，以及是否必须指定品牌等。"],
-        ["能否指定品牌？",
-        "可以；如允许等效品牌，往往能获得更具竞争力的报价。"],
-        ["如何对比报价？",
-        "以并列表格呈现价格、交期、质保、运费与付款条款等，清晰直观。"],
-        ["如果报价不合适怎么办？",
-        "通过消息沟通，提出修改或进行轻量协商。"],
-        ["是否收费？",
-        "基础使用通常免费；若需高级服务，请联系团队。"],
-        ["数据是否安全？",
-        "采用行业最佳实践与基于角色的访问控制，仅相关方可查看。"],
-        ["何时发出 PO？",
-        "选定中选供应商并确认条款后，即可生成采购订单（PO）。"],
-        ["是否保证商品质量？",
-        "供应商已通过资质审核，但仍建议复核规格并保留交易凭证。"],
-        ["能否导入需求清单？",
-        "CSV/Excel 导入将逐步开放；当前可附加文件或粘贴规格。"],
-        ["我是新手不确定规格怎么办？",
-        "描述使用场景与约束（如“50 m² 空间，日用 8 小时”），供应商可给出合适建议。"]
-      ]
+      groups: {
+        rfq: [
+          ["什么是RFQ？", 
+          "RFQ（询价单）是请求报价的过程。您填写需求（规格、数量、地点），系统会同时发送给多个供应商，方便比较。"],
+          ["什么时候应该使用RFQ？", 
+          "当您的需求已明确时使用RFQ：类型、尺寸、数量和目标时间。如果需要整体解决方案（例如设计或复杂安装），请使用RFP（提案请求）。"],
+          ["RFQ中必须填写什么？", 
+          "请填写产品/服务名称、关键规格、数量、交付地点和需求时间。也可以附加特定品牌、照片/附件或质量要求。"],
+          ["如何比较报价？", 
+          "所有报价会并排显示：价格、交期、质保、运费和付款条件。您可以筛选和排序以便选择。"],
+          ["如果报价不符合怎么办？", 
+          "您可以在消息栏询问或谈判：修改数量、要求折扣、更换等效品牌，或要求其他交货时间。"],
+          ["需要费用吗？", 
+          "基础账户免费。高级服务（如优先支持）可能会收取费用。"]
+        ],
+        app: [
+          ["是否有移动应用？", 
+          "有。IronAsia 提供移动应用，您可以通过手机跟踪RFQ、接收报价通知，并直接与供应商沟通。"],
+          ["如何在应用中登录？", 
+          "使用与网站相同的邮箱和密码。我们也支持通过邮箱发送的OTP快速登录。"],
+          ["我可以通过应用上传文件吗？", 
+          "可以。您可以在创建RFQ时附加PDF、产品照片或小型表格文件。"],
+          ["为什么我没有收到应用通知？", 
+          "请确保已开启手机通知权限，并检查IronAsia应用通知是否未被静音。"]
+        ],
+        web: [
+          ["什么是IronAsia网站？", 
+          "IronAsia的官方网站是 https://ironasia.com/mainhome。在这里您可以查看信息、功能并在线提交RFQ。"],
+          ["如何开始使用IronAsia网站？", 
+          "1. 打开 https://ironasia.com/mainhome。\n2. 点击“注册”创建新账户，或点击“登录”进入已有账户。\n3. 登录后，您可以创建RFQ、查看供应商报价或管理订单。"],
+          ["尝试时是否需要账户？", 
+          "是的，若要提交RFQ或接收报价，您需要一个账户。注册过程很快，仅需邮箱和基本信息。"],
+          ["网站上有哪些功能？", 
+          "在网站上，您可以：创建RFQ、搜索供应商、比较报价、与供应商交流、并跟踪订单状态。"],
+          ["IronAsia网站可以在手机上使用吗？", 
+          "可以。IronAsia网站支持响应式设计，可以在电脑或手机上访问，无需下载应用。"],
+          ["如果我只是想先浏览怎么办？", 
+          "无需登录，您仍然可以查看IronAsia功能的常规信息。但提交RFQ或与供应商互动必须先登录。"]
+        ],
+        supplier: [
+          ["如何成为IronAsia的供应商？", 
+          "您需要注册供应商账户。此过程需要上传正式文件（如NIB营业执照）并同意IronAsia的条款和条件。"],
+          ["我可以修改报价吗？", 
+          "可以。在RFQ关闭前，您可以提交修改后的价格、交期或替代品牌。"],
+          ["接收RFQ需要付费吗？", 
+          "接收相关RFQ免费。但有可选的推广套餐和优先功能。"],
+          ["如何提高中标几率？", 
+          "快速响应，清楚说明库存和交期，提供质保或售后服务，并在主要产品缺货时提供等效替代方案。"]
+        ],
+        customer: [
+          ["如何成为IronAsia的客户？", 
+          "注册客户账户时需上传身份证（KTP）作为正式身份并同意IronAsia的条款和条件。"],
+          ["如何确保商品质量？", 
+          "选择已验证的供应商，检查报价中的规格，如有需要可要求质保证书或COA，并保存交易凭证。"],
+          ["什么时候需要发布PO？", 
+          "在选择中标报价并确认价格、交付和付款后。IronAsia系统会帮助您生成PO并跟踪状态。"],
+          ["我的数据安全吗？", 
+          "我们采用最佳安全实践，并基于角色控制访问。只有授权方才能查看您的RFQ详情。"]
+        ]
+      }
     },
     about: {
       title: "关于我们",
