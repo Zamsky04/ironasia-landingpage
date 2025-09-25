@@ -47,7 +47,7 @@ export default function Header() {
           <a href="#faq" className="hover:text-primary-600">{t("nav.faq")}</a>
           <a href="#demo" className="hover:text-primary-600">{t("nav.demo")}</a>
           <a href="#download" className="hover:text-primary-600">{t("nav.download")}</a>
-          <a href="#kontak" className="hover:text-primary-600">{t("nav.kontak")}</a>
+          <a href="#help" className="hover:text-primary-600">{t("nav.help")}</a> 
         </nav>
 
         {/* kanan */}

@@ -175,6 +175,40 @@ export const TRANSLATIONS = {
       }
     },
 
+    help: {
+      title: "Butuh Bantuan?",
+      subtitle: "Tim kami siap membantu. Isi formulir di bawah ini dan kami akan segera menghubungi Anda.",
+      form: {
+        name: "Nama Lengkap",
+        name_placeholder: "Masukkan nama Anda",
+        email: "Alamat Email",
+        email_placeholder: "email@anda.com",
+        subject: "Subjek",
+        subject_placeholder: "— Pilih Kategori Bantuan —",
+        attachment: "Lampiran (Opsional)",
+        message: "Pesan Anda",
+        message_placeholder: "Jelaskan kendala atau pertanyaan Anda di sini...",
+        submit: "Kirim Tiket Bantuan",
+        submitting: "Mengirim...",
+        validation: {
+          title: "Data Belum Lengkap",
+          text: "Mohon isi semua kolom yang ditandai *.",
+          name: "Nama wajib diisi.",
+          email: "Email wajib diisi.",
+          subject: "Subjek wajib dipilih.",
+          message: "Pesan wajib diisi."
+        },
+        success: {
+          title: "Terkirim!",
+          text: "Tiket bantuan Anda telah kami terima. Tim kami akan segera merespon."
+        },
+        error: {
+          title: "Gagal Mengirim",
+          text: "Terjadi kesalahan. Silakan coba lagi nanti."
+        }
+      }
+    },
+
     dl: {
       title: "Mulai Menggunakan IronAsia",
       p: "Akses lewat web, atau unduh aplikasi mobile Anda.",
@@ -299,6 +333,40 @@ export const TRANSLATIONS = {
         submitting: "Submitting...",
         success: "Thank you! Your request has been sent.",
         error: "An error occurred. Please try again."
+      }
+    },
+
+    help: {
+      title: "Need Help?",
+      subtitle: "Our team is here to assist. Fill out the form below, and we will get back to you shortly.",
+      form: {
+        name: "Full Name",
+        name_placeholder: "Enter your name",
+        email: "Email Address",
+        email_placeholder: "your@email.com",
+        subject: "Subject",
+        subject_placeholder: "— Select a Help Category —",
+        attachment: "Attachment (Optional)",
+        message: "Your Message",
+        message_placeholder: "Describe your issue or question here...",
+        submit: "Submit Help Ticket",
+        submitting: "Submitting...",
+        validation: {
+          title: "Incomplete Data",
+          text: "Please fill in all required fields marked with *.",
+          name: "Name is required.",
+          email: "Email is required.",
+          subject: "Subject is required.",
+          message: "Message is required."
+        },
+        success: {
+          title: "Submitted!",
+          text: "Your help ticket has been received. Our team will respond shortly."
+        },
+        error: {
+          title: "Submission Failed",
+          text: "An error occurred. Please try again later."
+        }
       }
     },
 
@@ -500,6 +568,40 @@ export const TRANSLATIONS = {
         submitting: "提交中...",
         success: "谢谢！您的请求已发送。",
         error: "发生错误。请再试一次。"
+      }
+    },
+
+    help: {
+      title: "需要帮助吗？",
+      subtitle: "我们的团队随时准备为您提供帮助。请填写下面的表格，我们会尽快与您联系。",
+      form: {
+        name: "全名",
+        name_placeholder: "输入您的姓名",
+        email: "电子邮件地址",
+        email_placeholder: "your@email.com",
+        subject: "主题",
+        subject_placeholder: "— 选择帮助类别 —",
+        attachment: "附件（可选）",
+        message: "您的留言",
+        message_placeholder: "请在此处描述您的问题...",
+        submit: "提交帮助请求",
+        submitting: "提交中...",
+        validation: {
+          title: "信息不完整",
+          text: "请填写所有带*号的必填项。",
+          name: "姓名是必填项。",
+          email: "电子邮件是必填项。",
+          subject: "主题是必填项。",
+          message: "留言是必填项。"
+        },
+        success: {
+          title: "已提交！",
+          text: "我们已收到您的帮助请求，我们的团队将尽快回复。"
+        },
+        error: {
+          title: "提交失败",
+          text: "发生错误，请稍后再试。"
+        }
       }
     },
 
