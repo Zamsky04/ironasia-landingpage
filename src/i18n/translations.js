@@ -266,7 +266,7 @@ export const TRANSLATIONS = {
 
     about:{ title:"About Us", timelineTitle:"Company Timeline", timeline:["2020 – Idea born","2021-2024 – Platform development","2025 – Official launch of IronAsia"], visionTitle:"Vision", vision:"To become Indonesia’s largest building materials e-commerce platform, connecting the entire construction ecosystem.", missionTitle:"Mission", mission:["Provide easy access to a wide range of building materials.","Ensure transparent pricing and quality.","Help contractors and retailers get materials on time.","Promote digitalization of Indonesia’s construction industry.","Serve both B2B and B2C needs in a hybrid way."], valuesTitle:"Core Values", values:["Integrity","Efficiency","Innovation","Collaboration","Sustainability"] },
 
-    dl:{ title:"Get Started with IronAsia", p:"Access via web or download our mobile apps.", web:"Open Web Marketplace", and:"Download Android", ios:"Download iOS" },
+    dl:{ title:"Get Started with IronAsia", p:"Access via web or download our mobile apps.", or:"Or download our mobile app:", web:"Open Web Marketplace", and:"Download Android", ios:"Download iOS" },
     footer:{ privacy:"Privacy Policy", terms:"Terms & Conditions", download:"Download" }
   },
 
@@ -451,6 +451,7 @@ export const TRANSLATIONS = {
     dl: {
       title: "开始使用 IronAsia",
       p: "可通过网页访问，或下载移动端应用。",
+      or: "或下载移动端应用：",
       web: "打开网页平台",
       and: "下载 Android",
       ios: "下载 iOS"
