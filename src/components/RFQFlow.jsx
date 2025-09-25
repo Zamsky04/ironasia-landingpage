@@ -1,176 +1,118 @@
-import { useState } from "react";
-import { useI18n } from "../i18n/useI18n";
+import { useState } from 'react';
+import { useI18n } from '../i18n/useI18n'; 
+
+import { 
+    PencilSquareIcon, 
+    PaperAirplaneIcon, 
+    MagnifyingGlassCircleIcon, 
+    ChatBubbleLeftRightIcon,
+    ScaleIcon,
+    HandThumbUpIcon,
+    CheckBadgeIcon,
+    TruckIcon
+} from '@heroicons/react/24/outline';
+
 
 export default function RFQFlow() {
-  const { tn } = useI18n();
-  const steps = tn("rfq.steps") || [];
+    const { tn } = useI18n();
+    const steps = tn("rfq.steps") || [];
+    const [open, setOpen] = useState(new Set());
+    const toggle = (i) =>
+        setOpen((prev) => {
+            const n = new Set(prev);
+            n.has(i) ? n.delete(i) : n.add(i);
+            return n;
+        });
+        
+    const stepIcons = [
+        PencilSquareIcon, PaperAirplaneIcon, MagnifyingGlassCircleIcon, 
+        ChatBubbleLeftRightIcon, ScaleIcon, HandThumbUpIcon, 
+        CheckBadgeIcon, TruckIcon
+    ];
 
-  const topCount = Math.ceil(steps.length / 2);
-  const top = steps.slice(0, topCount);
-  const bottom = steps.slice(topCount);
+    const DesktopItem = ({ globalIndex, title, desc }) => {
+        const Icon = stepIcons[globalIndex] || PencilSquareIcon;
+        return (
+            <article
 
-  // State dipakai khusus untuk mobile (desktop = hover-only)
-  const [open, setOpen] = useState(new Set());
-  const toggle = (i) =>
-    setOpen((prev) => {
-      const n = new Set(prev);
-      n.has(i) ? n.delete(i) : n.add(i);
-      return n;
-    });
-
-  const StepHeader = ({ i }) => (
-    <div className="flex items-center gap-2 text-[11px] font-semibold text-primary-700">
-      <span className="inline-flex items-center justify-center size-6 rounded-full bg-primary-50 text-primary-700 ring-1 ring-primary-200">
-        {i + 1}
-      </span>
-      <span className="inline-block size-1.5 rounded-full bg-accent-600" />
-      <span className="uppercase tracking-wide">Step {i + 1}</span>
-    </div>
-  );
-
-  // Tinggi slot deskripsi agar kartu seragam (desktop)
-  // Atur sesuai rata-rata 3–4 baris teks
-  const DESC_SLOT_DESKTOP = "h-24"; // ~96px
-  const DESC_SLOT_MOBILE  = "max-h-40"; // batas expand saat buka
-
-  /* ======================= DESKTOP ITEM (HOVER-ONLY) ======================= */
-  const DesktopItem = ({ globalIndex, title, desc }) => {
-    return (
-      <article
-        className={[
-          "group relative h-full rounded-2xl bg-white border border-blue-200",
-          "shadow-sm hover:shadow-md transition-shadow duration-300",
-          "focus-within:shadow-md"
-        ].join(" ")}
-      >
-        <div className="flex h-full flex-col p-5 sm:p-6">
-          <StepHeader i={globalIndex} />
-
-          {/* Title dibatasi 2 baris supaya header seragam */}
-          <h3 className="mt-2 text-base sm:text-lg font-semibold text-slate-900 line-clamp-2">
-            {title}
-          </h3>
-
-          {/* Slot deskripsi punya tinggi FIXED -> tinggi kartu konstan.
-              Saat tidak dihover: disembunyikan dengan opacity + translateY
-              Saat hover: smooth fade+slide tanpa mengubah layout */}
-          <div className={`mt-2 relative ${DESC_SLOT_DESKTOP} overflow-hidden`}>
-            <p
-              className={[
-                "absolute inset-0 text-sm text-slate-600 leading-relaxed",
-                "transition duration-300 ease-out",
-                "opacity-0 translate-y-1",            // default tersembunyi
-                "group-hover:opacity-100 group-hover:translate-y-0", // tampil saat hover
-                "motion-reduce:transition-none"
-              ].join(" ")}
+                className="group relative h-full rounded-2xl p-6 bg-white border border-slate-200
+                           shadow-lg transition-all duration-300 ease-out cursor-default
+                           hover:shadow-xl"
             >
-              {desc}
-            </p>
-          </div>
+                <div className="flex items-start justify-between gap-4">
+                    <div className="inline-flex items-center justify-center size-12 rounded-xl 
+                                    bg-primary-100 ring-4 ring-primary-50
+                                    transition-transform duration-300 group-hover:scale-105">
+                        <Icon className="size-6 text-primary-600" strokeWidth={1.5} />
+                    </div>
+                    <span className="text-xs font-bold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">
+                        {globalIndex + 1}
+                    </span>
+                </div>
 
-          {/* Aksen garis (muncul saat hover) — tidak memengaruhi tinggi */}
-          <div
-            className={[
-              "mt-3 h-[3px] bg-gradient-to-r from-transparent via-[var(--color-accent-500)] to-transparent",
-              "transition-opacity duration-300 opacity-0 group-hover:opacity-100",
-              "motion-reduce:transition-none"
-            ].join(" ")}
-          />
-        </div>
-      </article>
-    );
-  };
+                <div className="mt-4">
+                    <h3 className="font-semibold text-lg text-slate-800">{title}</h3>
+                    <div className="overflow-hidden">
+                       <p className="mt-1 text-base text-slate-600 leading-relaxed transition-all duration-300 ease-out 
+                                     max-h-0 opacity-0 group-hover:max-h-60 group-hover:opacity-100">
+                           {desc}
+                       </p>
+                    </div>
+                </div>
+            </article>
+        );
+    };
 
-  return (
-    <section id="alur" className="relative py-16 md:py-20 bg-slate-50">
-      <div className="container-fluid">
-        {/* heading */}
-        <div className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-accent-50 text-accent-700 ring-1 ring-accent-200/60">
-            <span className="inline-block size-2.5 rounded-full bg-accent-600" />
-            {tn("rfq.badge") || "Alur Permintaan (RFQ)"}
-          </span>
-        </div>
-        <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold text-center">
-          {tn("rfq.title")}
-        </h2>
-        <p className="mt-2 text-muted-600 max-w-3xl mx-auto text-center">{tn("rfq.desc")}</p>
-
-        {/* ======================= DESKTOP (2 ROWS) ======================= */}
-        <div
-          className="hidden lg:grid grid-rows-2 gap-x-7 gap-y-6 mt-10"
-          style={{
-            gridTemplateColumns: `repeat(${Math.max(top.length, bottom.length) || 1}, minmax(0,1fr))`
-          }}
-        >
-          {/* Row 1 */}
-          {top.map(([title, desc], idx) => (
-            <div key={`t-${idx}`} className="row-start-1 h-full">
-              <DesktopItem globalIndex={idx} title={title} desc={desc} />
-            </div>
-          ))}
-
-          {/* Row 2 */}
-          {bottom.map(([title, desc], idx) => {
-            const gi = top.length + idx;
-            return (
-              <div key={`b-${idx}`} className="row-start-2 h-full">
-                <DesktopItem globalIndex={gi} title={title} desc={desc} />
-              </div>
-            );
-          })}
-        </div>
-
-        {/* ======================= MOBILE/TABLET ======================= */}
-        <ol className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:hidden">
-          {steps.map(([title, desc], i) => {
-            const isOpen = open.has(i);
-            return (
-              <li key={i} className="h-full">
-                <div className="relative h-full rounded-2xl border border-blue-200 bg-white shadow-sm">
-                  <button
+    const MobileItem = ({ i, title, desc }) => {
+        const isOpen = open.has(i);
+        const Icon = stepIcons[i] || PencilSquareIcon;
+        return (
+             <li className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm p-1.5">
+                <button
                     type="button"
                     onClick={() => toggle(i)}
-                    onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && toggle(i)}
-                    aria-expanded={isOpen}
-                    aria-controls={`rfq-desc-${i}`}
-                    className="w-full text-left px-5 py-5 sm:px-6 sm:py-6 flex flex-col"
-                  >
-                    <StepHeader i={i} />
-                    <h3 className="mt-2 text-base sm:text-lg font-semibold text-slate-900 line-clamp-2">
-                      {title}
-                    </h3>
-                  </button>
-
-                  {/* Collapsible: tidak ambil ruang saat tertutup */}
-                  <div
-                    id={`rfq-desc-${i}`}
-                    aria-hidden={!isOpen}
-                    className={[
-                      "px-5 pb-5 sm:px-6 sm:pb-6 -mt-2",
-                      "overflow-hidden transition-all duration-300",
-                      isOpen ? `${DESC_SLOT_MOBILE} opacity-100` : "max-h-0 opacity-0",
-                      "motion-reduce:transition-none"
-                    ].join(" ")}
-                  >
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      {desc}
-                    </p>
-                    <div
-                      className={[
-                        "mt-3 h-[3px] bg-gradient-to-r from-transparent via-[var(--color-accent-500)] to-transparent",
-                        "transition-opacity duration-300",
-                        isOpen ? "opacity-100" : "opacity-0",
-                        "motion-reduce:transition-none"
-                      ].join(" ")}
-                    />
-                  </div>
+                    className="w-full text-left p-4 flex items-center gap-4"
+                >
+                    <div className="inline-flex items-center justify-center flex-shrink-0 size-10 rounded-lg bg-primary-50 text-primary-600">
+                       <Icon className="size-5" />
+                    </div>
+                    <h3 className="flex-grow text-base font-semibold text-slate-900">{title}</h3>
+                    <span className="text-xs font-bold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full flex-shrink-0">
+                        {i + 1}
+                    </span>
+                </button>
+                <div 
+                    className={`transition-all duration-300 ease-out overflow-hidden ${
+                        isOpen ? 'max-h-96 opacity-100 px-5 pb-5' : 'max-h-0 opacity-0'
+                    }`}
+                >
+                    <div className="h-px bg-slate-200 mb-3" />
+                    <p className="text-sm text-slate-600 leading-relaxed">{desc}</p>
                 </div>
-              </li>
-            );
-          })}
-        </ol>
-      </div>
-    </section>
-  );
+            </li>
+        )
+    }
+
+    return (
+        <section id="alur" className="relative py-16 md:py-20 bg-gradient-to-b from-primary-300 to-white">
+            <div className="container-fluid">
+                <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold text-center text-slate-900">
+                    {tn("rfq.title")}
+                </h2>
+                <p className="mt-2 text-slate-600 max-w-3xl mx-auto text-center">{tn("rfq.desc")}</p>
+
+                <div className="hidden lg:grid grid-cols-4 gap-6 mt-10">
+                    {steps.map(([title, desc], idx) => (
+                        <DesktopItem key={idx} globalIndex={idx} title={title} desc={desc} />
+                    ))}
+                </div>
+                
+                <ol className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:hidden">
+                    {steps.map(([title, desc], i) => (
+                        <MobileItem key={i} i={i} title={title} desc={desc} />
+                    ))}
+                </ol>
+            </div>
+        </section>
+    );
 }
