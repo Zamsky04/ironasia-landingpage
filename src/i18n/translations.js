@@ -38,7 +38,6 @@ export const TRANSLATIONS = {
         ["Branding & Kredibilitas","Supplier tampil lebih profesional dengan profil resmi."]
       ]
     },
-    /* ======= RFQ (dibuat sederhana & lengkap untuk pemula) ======= */
     rfq: {
       title: "Alur RFQ B2B IronAsia",
       desc: "Langkah-langkah sederhana: tulis kebutuhan → kirim → terima & bandingkan penawaran → pilih terbaik.",
@@ -68,19 +67,16 @@ export const TRANSLATIONS = {
         "Cantumkan deadline pengiriman yang realistis.",
         "Jika ada target harga, sebutkan sebagai acuan (opsional)."
       ],
-      ctaBuyer: "Mulai Ajukan RFQ",   // tetap ada untuk komponen lain, tapi kita tidak tampilkan di RFQFlow
+      ctaBuyer: "Mulai Ajukan RFQ", 
       ctaSupplier: "Jadi Supplier"
     },
 
-    /* ======= Showcase etc (tak berubah) ======= */
     show: { title:"Koneksikan Bisnis Anda", p:"Tingkatkan jangkauan & efisiensi dengan ekosistem supplier-buyer aktif. Kelola permintaan, penawaran, dan komunikasi dari satu dashboard.", a:"Katalog", b:"RFQ", c:"Supplier" },
 
     supplier: { title:"Bergabung sebagai Supplier", p:"Terima RFQ relevan, perluas jaringan B2B, dan tingkatkan omzet.", bullets:["Profil & verifikasi perusahaan","Unggah katalog & kelola stok","Penawaran cepat dengan template"], k1:"RFQ/bulan", v1:"Bervariasi", k2:"Kategori", v2:"Industri & MRO", k3:"Metode", v3:"Online & email", k4:"Dukungan", v4:"Chat & email", c1:"Bergabung sebagai supplier", c2:"Pelajari Lebih Lanjut" },
 
-    /* ======= FAQ (ditambah & diperjelas) ======= */
     faq: {
       title: "Pertanyaan Umum",
-      // ⬇️ struktur baru: dikelompokkan
       groups: {
         rfq: [
           ["Apa itu RFQ?",
@@ -161,7 +157,14 @@ export const TRANSLATIONS = {
       values:["Integritas","Efisiensi","Inovasi","Kolaborasi","Keberlanjutan"]
     },
 
-    dl: { title:"Mulai Menggunakan IronAsia", p:"Akses lewat web, atau unduh aplikasi mobile Anda.", web:"Buka Marketplace Web", and:"Download Android", ios:"Download iOS" },
+    dl: {
+      title: "Mulai Menggunakan IronAsia",
+      p: "Akses lewat web, atau unduh aplikasi mobile Anda.",
+      web: "Marketplace 1ronAsia",
+      or: "Atau unduh aplikasi seluler kami:",
+      and: "Download Android",
+      ios: "Download iOS"
+    },
     footer: { privacy:"Kebijakan Privasi", terms:"Syarat & Ketentuan", download:"Download" }
   },
 

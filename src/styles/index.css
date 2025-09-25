@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
   background-position: var(--ia-watermark-pos, center);
   background-size: min(38vw, 420px);
-  opacity: 0.06;                /* tingkat transparansi watermark */
+  opacity: 0.06;          /* tingkat transparansi watermark */
   pointer-events: none;
   filter: grayscale(100%) contrast(1.08);
   transform: translateZ(0);
@@ -55,23 +55,36 @@
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
   --font-sutro: "Sutro W01 Extra Bold Italic", ui-sans-serif, system-ui, sans-serif;
 
-  --color-primary-50:#eff6ff; --color-primary-100:#dbeafe; --color-primary-200:#bfdbfe;
-  --color-primary-300:#93c5fd; --color-primary-400:#60a5fa; --color-primary-500:#3b82f6;
-  --color-primary-600:#2563eb; /* utama */ --color-primary-700:#1d4ed8; --color-primary-800:#1e40af;
+  --color-primary-50:  #eef5ff;
+  --color-primary-100: #dbe9ff;
+  --color-primary-200: #b9d3ff;
+  --color-primary-300: #8fb6ff;
+  --color-primary-400: #5f8dff;
+  --color-primary-500: #3b6cff; 
+  --color-primary-600: #2556f2; 
+  --color-primary-700: #1e47c9;
+  --color-primary-800: #193da5;
+  --color-primary-900: #162f7a;
 
   --color-accent-500:#f59e0b;
   --gradient-hero: linear-gradient(120deg, var(--color-primary-700), var(--color-primary-500));
 
-    --color-accent-50:  #ffecee;
-  --color-accent-100: #ffd6da;
-  --color-accent-200: #ffb3b8;
-  --color-accent-300: #ff8a92;
-  --color-accent-400: #ff5965;
-  --color-accent-500: #ff3242;
-  --color-accent-600: #e61627; 
-  --color-accent-700: #bd0f1e;
-  --color-accent-800: #960d19;
-  --color-accent-900: #7b0c16;
+  --color-accent-50:  #fff1f1;
+  --color-accent-100: #ffdada;
+  --color-accent-200: #ffb3b3;
+  --color-accent-300: #ff8a8a;
+  --color-accent-400: #ff5c5c;
+  --color-accent-500: #ff3a3a; 
+  --color-accent-600: #ef2626; 
+  --color-accent-700: #c51f1f;
+  --color-accent-800: #9f1a1a;
+  --color-accent-900: #741414;
+
+    --color-muted-600: #64748b;
+
+  --color-cyan-300: #7de3ff;
+  --color-cyan-400: #41d8ff;
+  --color-cyan-500: #00ccff;
 }
 
 @font-face {
@@ -88,8 +101,15 @@
   font-style: italic;
 }
 
+:root{
+  --ia-blue: #0050FF;      
+  --ia-blue-700: #003FE0;
+  --ia-red:  #FF2B2B;      
+  --ia-cyan: #00CCFF; 
+  --ia-red-rgb: 255, 43, 43; 
+  --ia-blue-rgb: 0, 80, 255;
+}
 
-/* Ukuran font global lebih besar */
 html { font-size: 17px; }
 @media (min-width: 640px){ html { font-size: 18px; } }
 
@@ -98,15 +118,38 @@ html, body, #root { height: 100%; }
 body {
   margin: 0;
   font-family: var(--font-sans);
-  color: #0f172a; /* slate-900 */
-  background: #f8fafc; /* slate-50 */
+  color: #0f172a;
+  background: #f8fafc;
+}
+/* --- Custom Gradients for FAQ Cards --- */
+
+.gradient-border-faq {
+  background: linear-gradient(135deg, var(--ia-blue), var(--ia-cyan), var(--ia-blue));
+  
 }
 
+
+.hover\:gradient-border-faq-hover:hover {
+  background: linear-gradient(135deg, var(--ia-blue), var(--ia-cyan));
+ 
+}
+
+.hover\:gradient-border-faq-hover:hover > div { 
+    box-shadow: 0 4px 12px rgba(0, 80, 255, 0.1);
+}
+
+.focus-ring {
+  @apply outline-none ring-2 ring-transparent ring-offset-2 ring-offset-white; 
+
+}
 html, body {
-  overflow-x: hidden;        /* cegah geser samping */
+  overflow-x: hidden;        
   width: 100%;
 } 
 
+.card-skin-gradient {
+  background-image: linear-gradient(135deg, var(--ia-blue), var(--ia-cyan));
+}
 .container-fluid { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
 .text-muted-600 { @apply text-slate-600; }
 :focus-visible { outline: 2px solid var(--color-primary-600); outline-offset: 2px; }
@@ -152,13 +195,11 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* Cards subtle hover */
 .card {
   @apply rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-gray-50 p-5 sm:p-6 shadow-sm transition;
 }
 .card:hover { box-shadow: 0 10px 28px rgba(15,23,42,.08); transform: translateY(-2px); }
 
-/* Hamburger icon visibility on mixed background */
 .btn-hamburger {
   @apply md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white shadow-sm;
 }
@@ -170,17 +211,13 @@ html, body {
 }
 .btn-wa:hover { filter: brightness(1.06); box-shadow: 0 10px 22px rgba(18,140,126,.35); transform: translateY(-1px); }
 
-/* Safe area helpers */
 .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
 .pt-safe { padding-top: env(safe-area-inset-top); }
 
-/* Drawer overlay (jaga di atas segalanya) */
 .drawer-overlay { z-index: 1000; }
 
-/* Scroll halus di iOS */
 aside[role="dialog"] { -webkit-overflow-scrolling: touch; }
 
-/* Sembunyikan/override widget melayang saat drawer open */
 body.drawer-open .floating-widget,
 body.drawer-open .wa-chat-bubble,
 body.drawer-open .wa-widget,
@@ -195,7 +232,6 @@ body.drawer-open [id*="chat"] {
   visibility: hidden !important;
 }
 
-/* Tombol compact */
 .btn-primary-compact {
   @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold text-white transition;
   background-image: linear-gradient(135deg, var(--color-primary-700), var(--color-primary-600));
@@ -210,7 +246,6 @@ body.drawer-open [id*="chat"] {
 }
 .btn-wa-compact:hover { filter: brightness(1.06); transform: translateY(-1px); }
 
-/* Wordmark konsisten */
 .brand-wordmark {
   font-family: var(--font-sutro);
   font-weight: 800;
@@ -223,12 +258,10 @@ body.drawer-open [id*="chat"] {
   .brand-wordmark { font-size: 1.25rem; }
 }
 
-/* Matikan watermark jika perlu: tambahkan class "wm-off" pada section */
 .wm-off::after { content: none !important; }
 
-/* Lembutkan watermark: pakai class "wm-soft" (dipakai di RFQFlow di atas) */
 .wm-soft::after {
-  opacity: .03;                /* dari .06 → .03 */
+  opacity: .03;        
   background-size: min(70vw, 560px);
   filter: grayscale(100%) contrast(1.02);
 }
