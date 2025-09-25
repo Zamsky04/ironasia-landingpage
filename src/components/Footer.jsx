@@ -26,8 +26,29 @@ const Ico = {
   ),
 };
 
+const WebIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 20 20"
+    fill="currentColor"
+    className="w-5 h-5"
+    aria-hidden="true"
+  >
+    <path
+      fillRule="evenodd"
+      d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z"
+      clipRule="evenodd"
+    />
+    <path
+      fillRule="evenodd"
+      d="M6.194 12.753a.75.75 0 001.06.053L16.25 4.806V8.25a.75.75 0 001.5 0V3a.75.75 0 00-.75-.75H12a.75.75 0 000 1.5h3.444L6.14 11.694a.75.75 0 00.054 1.06z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
 export default function Footer() {
-  const { t } = useI18n();
+  const { tn, t } = useI18n();
 
   return (
     <footer className="bg-gradient-to-br from-[#374151] via-[#4B5563] to-[#1f2937] text-slate-300 pt-12 pb-8 mt-0">
@@ -70,15 +91,16 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold text-white mb-3">Gabung Sekarang</h4>
           <a
-            href="#alur"
+            href="https://ironasia.com/"
             className="w-full mb-2 inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold text-white
                       bg-gradient-to-r from-[#6B7280] via-[#4B5563] to-[#374151]
                       shadow-md transition hover:brightness-110 hover:shadow-lg"
           >
-            Ajukan RFQ
+            <WebIcon />
+            {tn("dl.web") || "Jelajahi Platform Web"}
           </a>
           <a
-            href="#supplier"
+            href="#download"
             className="w-full inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold border border-slate-400 text-slate-200 
                       transition hover:bg-slate-700/40 hover:border-slate-300"
           >
