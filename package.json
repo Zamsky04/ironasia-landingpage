@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "flag-icons": "^7.5.0",
+    "framer-motion": "^12.23.20",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
