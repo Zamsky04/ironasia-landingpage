@@ -157,6 +157,24 @@ export const TRANSLATIONS = {
       values:["Integritas","Efisiensi","Inovasi","Kolaborasi","Keberlanjutan"]
     },
 
+    demo: {
+      title: "Minta Demo Gratis",
+      subtitle: "Isi formulir di bawah ini dan tim kami akan segera menghubungi Anda untuk menjadwalkan demo personal.",
+      form: {
+        name: "Nama Lengkap",
+        company: "Nama Perusahaan",
+        email: "Alamat Email",
+        phone: "Nomor Telepon",
+        role: "Jabatan Anda",
+        message: "Pesan Tambahan",
+        placeholder: "Apa yang ingin Anda ketahui lebih lanjut?",
+        submit: "Kirim Permintaan Demo",
+        submitting: "Mengirim...",
+        success: "Terima kasih! Permintaan Anda telah terkirim.",
+        error: "Terjadi kesalahan. Silakan coba lagi."
+      }
+    },
+
     dl: {
       title: "Mulai Menggunakan IronAsia",
       p: "Akses lewat web, atau unduh aplikasi mobile Anda.",
@@ -265,6 +283,24 @@ export const TRANSLATIONS = {
 
 
     about:{ title:"About Us", timelineTitle:"Company Timeline", timeline:["2020 – Idea born","2021-2024 – Platform development","2025 – Official launch of IronAsia"], visionTitle:"Vision", vision:"To become Indonesia’s largest building materials e-commerce platform, connecting the entire construction ecosystem.", missionTitle:"Mission", mission:["Provide easy access to a wide range of building materials.","Ensure transparent pricing and quality.","Help contractors and retailers get materials on time.","Promote digitalization of Indonesia’s construction industry.","Serve both B2B and B2C needs in a hybrid way."], valuesTitle:"Core Values", values:["Integrity","Efficiency","Innovation","Collaboration","Sustainability"] },
+
+    demo: {
+      title: "Request a Free Demo",
+      subtitle: "Fill out the form below and our team will contact you shortly to schedule a personal demo.",
+      form: {
+        name: "Full Name",
+        company: "Company Name",
+        email: "Email Address",
+        phone: "Phone Number",
+        role: "Your Role",
+        message: "Additional Message",
+        placeholder: "What would you like to know more about?",
+        submit: "Send Demo Request",
+        submitting: "Submitting...",
+        success: "Thank you! Your request has been sent.",
+        error: "An error occurred. Please try again."
+      }
+    },
 
     dl:{ title:"Get Started with IronAsia", p:"Access via web or download our mobile apps.", or:"Or download our mobile app:", web:"Open Web Marketplace", and:"Download Android", ios:"Download iOS" },
     footer:{ privacy:"Privacy Policy", terms:"Terms & Conditions", download:"Download" }
@@ -448,6 +484,25 @@ export const TRANSLATIONS = {
       valuesTitle: "核心价值观",
       values: ["诚信","效率","创新","协作","可持续性"]
     },
+
+    demo: {
+      title: "请求免费演示",
+      subtitle: "请填写以下表格，我们的团队将尽快与您联系安排个人演示。",
+      form: {
+        name: "全名",
+        company: "公司名称",
+        email: "电子邮件地址",
+        phone: "电话号码",
+        role: "您的职位",
+        message: "附加信息",
+        placeholder: "您想了解更多关于什么？",
+        submit: "发送演示请求",
+        submitting: "提交中...",
+        success: "谢谢！您的请求已发送。",
+        error: "发生错误。请再试一次。"
+      }
+    },
+
     dl: {
       title: "开始使用 IronAsia",
       p: "可通过网页访问，或下载移动端应用。",

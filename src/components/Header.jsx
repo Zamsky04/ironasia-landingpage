@@ -45,6 +45,7 @@ export default function Header() {
           <a href="#alur" className="hover:text-primary-600">{t("nav.alur")}</a>
           <a href="#showcase" className="hover:text-primary-600">{t("nav.sorotan")}</a>
           <a href="#faq" className="hover:text-primary-600">{t("nav.faq")}</a>
+          <a href="#demo" className="hover:text-primary-600">{t("nav.demo")}</a>
           <a href="#download" className="hover:text-primary-600">{t("nav.download")}</a>
           <a href="#kontak" className="hover:text-primary-600">{t("nav.kontak")}</a>
         </nav>
@@ -127,6 +128,15 @@ export default function Header() {
                   className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50"
                 >
                   ❓ {t("nav.faq")}
+                </a>
+              </li>
+              <li>
+                <a
+                  onClick={() => setOpen(false)}
+                  href="#demo"
+                  className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-50"
+                >
+                  🖥️ {t("nav.demo") || "Demo"}
                 </a>
               </li>
               <li>

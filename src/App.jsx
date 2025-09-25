@@ -10,6 +10,7 @@ import About from './components/About.jsx';
 import FAQ from './components/FAQ.jsx';
 import DownloadSection from './components/DownloadSection.jsx';
 import Footer from './components/Footer.jsx';
+import DemoRequest from './components/DemoRequest.jsx';
 
 import I18nProvider from './i18n/I18nProvider.jsx';
 import { useI18n } from './i18n/useI18n.js';
@@ -28,6 +29,7 @@ function Page() {
       {/* <Showcase /> */}
       <SupplierCTA />
       <FAQ />
+      <DemoRequest />
       <DownloadSection />
       <Footer />
       <CustomerSupport />
