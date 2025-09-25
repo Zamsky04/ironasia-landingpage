@@ -1,10 +1,9 @@
-// src/components/DemoRequest.jsx
 import { useRef, useState } from "react";
 import Swal from "sweetalert2";
 import { useI18n } from "../i18n/useI18n";
 import { api } from "../lib/api";
 
-// format tanggal ke YYYY-MM-DD
+
 const formatDate = (val) => {
   if (!val) return "";
   const d = new Date(val);
@@ -15,7 +14,6 @@ const formatDate = (val) => {
 export default function DemoRequest() {
   const { t } = useI18n();
 
-  // >>> penting: useRef DI DALAM komponen
   const demoRef = useRef(null);
 
   const [form, setForm] = useState({
@@ -47,14 +45,13 @@ export default function DemoRequest() {
   const errMsg  = touched.message && isEmpty(form.message);
 
   const [busy, setBusy] = useState(false);
-  const [status, setStatus] = useState(null); // "success" | "error" | null
+  const [status, setStatus] = useState(null); 
 
   const baseInput = "h-10 w-full rounded-xl border px-3";
   const redIf = (cond) =>
     cond ? " border-rose-400 ring-1 ring-rose-200" : " border-slate-200";
 
   const stayOnDemo = () => {
-    // jaga-jaga supaya tetap di section demo setelah modal ditutup
     if (demoRef.current) {
       demoRef.current.scrollIntoView({ behavior: "auto", block: "start" });
     }
@@ -95,7 +92,6 @@ export default function DemoRequest() {
     setBusy(true);
     setStatus(null);
 
-    // Tampilkan modal loading (TANPA await) & ditambatkan ke section demo
     Swal.fire({
       title: "Mengirim...",
       allowOutsideClick: false,
@@ -112,9 +108,8 @@ export default function DemoRequest() {
         prefered_date: formatDate(form.prefered_date),
       });
 
-      Swal.close(); // tutup loading
+      Swal.close(); 
 
-      // Sukses: TANPA timer, biar user yang menutup
       await Swal.fire({
         icon: "success",
         title: "Terkirim!",
