@@ -1,185 +1,140 @@
 import { useI18n } from "../i18n/useI18n";
+import { ShieldCheckIcon, BoltIcon, LightBulbIcon, UserGroupIcon, SparklesIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion'; 
 
-/* ---------- Ikon SVG ringan (inline) ---------- */
-const Icon = ({ name, className = "h-4 w-4" }) => {
-  const common = "stroke-current";
-  switch (name.toLowerCase()) {
-    case "integritas":
-      return (
-        <svg viewBox="0 0 24 24" fill="none" className={`${className} ${common}`}>
-          <path d="M12 3l7 4v5c0 5-7 9-7 9s-7-4-7-9V7l7-4z" strokeWidth="1.8" />
-          <path d="M9.5 12.5l2 2 3.5-4" strokeWidth="1.8" />
+const ExecutiveGoalAnimation = () => {
+  return (
+    <div className="relative flex items-center justify-center size-64 md:size-80">
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+        className="absolute inset-0 border-2 border-primary-200 rounded-full"
+      />
+      <motion.div
+        animate={{ rotate: -360 }}
+        transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+        className="absolute inset-6 border border-primary-200/70 rounded-full"
+      />
+      <motion.div
+        initial={{ scale: 0.95 }}
+        animate={{ scale: [1, 1.03, 1] }}
+        transition={{ duration: 4, ease: "easeInOut", repeat: Infinity, repeatType: 'mirror' }}
+        className="relative flex items-center justify-center size-32 md:size-40 rounded-full bg-white shadow-2xl shadow-primary-200/50"
+      >
+        <svg className="size-16 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
         </svg>
-      );
-    case "efisiensi":
-      return (
-        <svg viewBox="0 0 24 24" fill="none" className={`${className} ${common}`}>
-          <path d="M3 12h18M12 3v18" strokeWidth="1.8" />
-          <circle cx="12" cy="12" r="8" strokeWidth="1.8" />
-        </svg>
-      );
-    case "inovasi":
-      return (
-        <svg viewBox="0 0 24 24" fill="none" className={`${className} ${common}`}>
-          <path d="M12 3a7 7 0 00-4 12v2a2 2 0 002 2h4a2 2 0 002-2v-2A7 7 0 0012 3z" strokeWidth="1.8" />
-          <path d="M9 21h6" strokeWidth="1.8" />
-        </svg>
-      );
-    case "kolaborasi":
-      return (
-        <svg viewBox="0 0 24 24" fill="none" className={`${className} ${common}`}>
-          <circle cx="8" cy="8" r="3" strokeWidth="1.8" />
-          <circle cx="16" cy="8" r="3" strokeWidth="1.8" />
-          <path d="M3 20a5 5 0 0110 0M11 20a5 5 0 0110 0" strokeWidth="1.8" />
-        </svg>
-      );
-    case "keberlanjutan":
-      return (
-        <svg viewBox="0 0 24 24" fill="none" className={`${className} ${common}`}>
-          <path d="M12 3c4 4 6 7 6 10a6 6 0 11-12 0c0-3 2-6 6-10z" strokeWidth="1.8" />
-          <path d="M12 3v10" strokeWidth="1.8" />
-        </svg>
-      );
-    default:
-      return (
-        <svg viewBox="0 0 24 24" fill="none" className={`${className} ${common}`}>
-          <path d="M5 12l4 4L19 6" strokeWidth="1.8" />
-        </svg>
-      );
-  }
+      </motion.div>
+    </div>
+  );
 };
 
-/* ---------- util timeline: pecah '2025 – ...' ---------- */
-const splitYearText = (row) => {
-  if (typeof row !== "string") return { year: "", text: row };
-  const [y, ...rest] = row.split("–");
-  return { year: (y || "").trim(), text: rest.join("–").trim() };
-};
 
 export default function About() {
   const { t, tn } = useI18n();
-  const timeline = t("about.timeline") || [];
-  const values = t("about.values") || [];
-  const mission = t("about.mission") || [];
+  const timelineData = tn("about.timeline") || [];
+  const valuesData = tn("about.values") || [];
+  const missionData = tn("about.mission") || [];
+
+  const valueIcons = {
+    "Integritas": ShieldCheckIcon, "Efisiensi": BoltIcon, "Inovasi": LightBulbIcon,
+    "Kolaborasi": UserGroupIcon, "Keberlanjutan": SparklesIcon,
+  };
+
+  const splitYearText = (row) => {
+    if (typeof row !== "string") return { year: "", text: row };
+    const [y, ...rest] = row.split("–");
+    return { year: (y || "").trim(), text: rest.join("–").trim() };
+  };
 
   return (
-    <section
-      id="about"
-      className="relative -mt-px py-20 bg-white ia-watermark"
-      data-pos="center"
-      data-size="lg"
-    >
+    <section id="about" className="relative py-20 md:py-24 bg-gradient-to-b from-white to-primary-50 overflow-hidden">
       <div className="container-fluid">
         {/* Title */}
         <div className="text-center">
-
-          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight">
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
             {tn("about.title")}
           </h2>
-          <p className="mt-3 text-muted-700 max-w-2xl mx-auto text-lg">
-            {tn("about.vision")}
+          <p className="mt-3 text-slate-600 max-w-3xl mx-auto text-lg">
+            {tn("about.desc")}
           </p>
         </div>
 
-        {/* Grid Content */}
-        <div className="mt-14 grid lg:grid-cols-3 gap-8">
-          {/* Timeline */}
-          <div className="group rounded-2xl border border-gray-200 bg-white p-8 shadow-sm
-                          hover:shadow-md transition-shadow">
-            <h3 className="text-xl font-semibold flex items-center gap-2">
-              <span className="inline-block size-2.5 rounded-full bg-accent-600 ring-4 ring-accent-50" />
-              {tn("about.timelineTitle")}
-            </h3>
-
-            <ol className="mt-6">
-              {timeline.map((row, i) => {
-                const { year, text } = splitYearText(row);
-                const isLast = i === timeline.length - 1;
-                return (
-                  <li key={i} className="grid grid-cols-[22px_1fr] gap-x-4">
-                    {/* rail + dot */}
-                    <div className="relative">
-                      {!isLast && (
-                        <span
-                          className="absolute left-[10px] top-4 bottom-[-14px] w-[2px]
-                                     bg-gradient-to-b from-accent-200 via-primary-200 to-primary-100"
-                          aria-hidden
-                        />
-                      )}
-                      <span
-                        className="absolute left-2 top-2 h-3.5 w-3.5 rounded-full
-                                   bg-accent-600 ring-4 ring-white shadow"
-                        aria-hidden
-                      />
-                    </div>
-                    {/* content */}
-                    <div className="pb-6">
-                      <div className="text-sm font-semibold text-slate-900">{year}</div>
-                      <div className="mt-0.5 text-sm text-slate-700">{text}</div>
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
+        <div className="mt-20 grid lg:grid-cols-2 items-center gap-12 lg:gap-20">
+          {/* Kolom Kiri: Grafik Animasi */}
+          <div className="flex justify-center">
+            <ExecutiveGoalAnimation />
           </div>
 
-          {/* Vision card */}
-          <div className="rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-gray-50 p-8 shadow-sm">
-            <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-              <span className="inline-block h-4 w-1.5 rounded-full bg-accent-600" />
-              {t("about.visionTitle")}
-            </h3>
-            <p className="text-sm text-muted-700 leading-relaxed">{tn("about.vision")}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="text-[11px] font-medium px-2 py-1 rounded-full bg-primary-50 text-primary-700 ring-1 ring-primary-200/70">
-                B2B Focus
-              </span>
-              <span className="text-[11px] font-medium px-2 py-1 rounded-full bg-accent-50 text-accent-700 ring-1 ring-accent-200/70">
-                Compliance
-              </span>
+          {/* Kolom Kanan: Teks Visi & Misi */}
+          <div>
+            <div>
+              <h3 className="text-3xl font-bold text-slate-900">{t("about.visionTitle")}</h3>
+              <p className="mt-3 text-xl text-slate-700 leading-relaxed">"{tn("about.vision")}"</p>
             </div>
-          </div>
 
-          {/* Mission card */}
-          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-            <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-              <span className="inline-block h-4 w-1.5 rounded-full bg-primary-600" />
-              {t("about.missionTitle")}
-            </h3>
-            <ul className="mt-1 space-y-2 text-sm text-muted-700">
-              {mission.map((m, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <span className="mt-1 inline-block size-1.5 rounded-full bg-accent-600 ring-2 ring-accent-100" />
-                  <span>{m}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="my-10 h-px bg-slate-200" />
+            
+            <div>
+              <h3 className="text-3xl font-bold text-slate-900">{t("about.missionTitle")}</h3>
+              <ul className="mt-5 space-y-4">
+                {missionData.map((m, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <CheckCircleIcon className="size-6 text-primary-500 flex-shrink-0 mt-1" />
+                    <span className="text-slate-700 text-lg">{m}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
-        {/* Values */}
-        <div className="mt-12 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm text-center">
-          <h3 className="text-xl font-semibold">{t("about.valuesTitle")}</h3>
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
-            {values.map((v, i) => (
-              <span
-                key={i}
-                className="inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-medium
-                           border shadow-sm
-                           bg-gradient-to-r from-primary-50 to-accent-50
-                           text-primary-800 border-primary-200/70 hover:from-primary-50 hover:to-accent-100
-                           transition-colors"
-              >
-                <span className="grid place-items-center size-5 rounded-full
-                                  bg-white ring-1 ring-primary-200/70">
-                  <Icon name={String(v)} className="h-3.5 w-3.5 text-primary-700" />
-                </span>
-                <span className="whitespace-nowrap">{v}</span>
-              </span>
-            ))}
+        {/* Timeline Horizontal */}
+        <div className="mt-24 text-center">
+          <h3 className="text-2xl font-bold text-slate-900">{t("about.timelineTitle")}</h3>
+          <div className="mt-12 max-w-4xl mx-auto">
+            <div className="relative grid grid-cols-3 gap-x-8">
+              <div className="absolute top-4 left-0 w-full h-0.5 bg-gradient-to-r from-accent-200 via-primary-200 to-primary-100" />
+              {timelineData.map((row, i) => {
+                const { year, text } = splitYearText(row);
+                return (
+                  <div key={i} className="relative text-center">
+                    <div className="relative inline-flex items-center justify-center">
+                      <span className="absolute size-9 rounded-full bg-primary-100 animate-pulse" />
+                      <span className="relative size-4 rounded-full bg-accent-600 ring-4 ring-white shadow-sm" />
+                    </div>
+                    <div className="mt-4">
+                      <div className="text-base font-semibold text-slate-900">{year}</div>
+                      <div className="mt-1 text-sm text-slate-600">{text}</div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
+        </div>
 
-          <div className="mt-6 h-px bg-gradient-to-r from-transparent via-accent-200 to-transparent" />
+        {/* Kartu Nilai Perusahaan */}
+        <div className="mt-24">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-slate-900">{t("about.valuesTitle")}</h3>
+            <p className="mt-2 text-slate-600 max-w-xl mx-auto">{t("about.valuesDesc")}</p>
+          </div>
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+            {valuesData.map((v, i) => {
+              const Icon = valueIcons[v] || SparklesIcon;
+              return (
+                <div key={i} className="rounded-xl border border-slate-200 bg-white p-5 text-center
+                                      shadow-sm transition-all duration-300
+                                      hover:shadow-lg hover:-translate-y-1 hover:border-primary-200">
+                  <div className="inline-flex items-center justify-center size-12 rounded-lg bg-primary-50">
+                    <Icon className="size-6 text-primary-600" />
+                  </div>
+                  <h4 className="mt-3 font-semibold text-slate-800">{v}</h4>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
