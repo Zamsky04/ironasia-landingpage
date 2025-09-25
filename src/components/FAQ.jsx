@@ -10,17 +10,17 @@ const PlusIcon = ({ className = "size-4" }) => (
 export default function FAQ() {
   const { tn } = useI18n();
 
-  // Struktur baru: faq.groups.{rfq|app|supplier|web} = [[q,a], ...]
-  // Fallback: kalau belum ada, pakai list lama sebagai RFQ.
-  const groups = tn("faq.groups") || { rfq: tn("faq.list") || [] };
+  const groups = useMemo(() => {
+        return tn("faq.groups") || { rfq: tn("faq.list") || [] };
+    }, [tn]);
 
-  // urutan tab & label
   const tabs = useMemo(
     () => ([
       ["rfq", "RFQ"],
       ["app", "Aplikasi"],
+      ["web", "Website"],
       ["supplier", "Supplier"],
-      ["web", "Web"],
+      ["customer", "Customer"],
     ].filter(([k]) => Array.isArray(groups[k]) && groups[k].length)),
     [groups]
   );
@@ -28,22 +28,16 @@ export default function FAQ() {
   const [tab, setTab] = useState(tabs[0]?.[0] || "rfq");
   const items = groups[tab] || [];
 
-  // Accordion: hanya satu open di seluruh grid
   const [openIndex, setOpenIndex] = useState(null);
   const toggle = (i) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
-    <section id="faq" className="relative py-16 md:py-20 bg-white wm-off">
+    <section id="faq" className="relative py-16 md:py-20 bg-gradient-to-t from-primary-400 to-white">
       <div className="container-fluid max-w-5xl">
         {/* Heading */}
         <div className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold
-                           bg-accent-50 text-accent-700 ring-1 ring-accent-200/60">
-            <span className="inline-block size-2.5 rounded-full bg-accent-600" />
-            {tn("faq.title")}
-          </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            Pertanyaan Umum
+            {tn("faq.title")}
           </h2>
         </div>
 
@@ -70,37 +64,40 @@ export default function FAQ() {
           {items.map(([q, a], i) => {
             const isOpen = openIndex === i;
             return (
-              <div key={i} className="self-start rounded-[28px] p-[1.5px] bg-primary-600/90">
-                {/* isi putih, TIDAK ada gradasi/warna biru di dalam */}
-                <div className="rounded-[26px] bg-white border border-slate-200/80 shadow-[0_1px_0_#e5e7eb]">
+              <div
+                key={i}
+                className={`relative rounded-3xl p-[1.5px] transition-all duration-300
+                           ${isOpen ? "shadow-xl transform -translate-y-1" : "shadow-sm"}
+                           ${isOpen ? "gradient-border-faq" : "hover:gradient-border-faq-hover bg-slate-200/90"}`}
+              >
+                <div className="rounded-[calc(1.5rem-1.5px)] bg-white border border-transparent">
                   <button
                     type="button"
                     onClick={() => toggle(i)}
                     className="w-full list-none cursor-pointer select-none flex items-center justify-between gap-5
-                               px-6 py-5 rounded-[26px] text-left focus-ring"
+                               px-6 py-5 text-left focus-ring rounded-[calc(1.5rem-1.5px)]"
                   >
-                    <span className="font-semibold text-[15px] sm:text-base leading-snug text-slate-900">
+                    <span className={`font-semibold text-[15px] sm:text-base leading-snug transition-colors duration-300
+                                     ${isOpen ? "text-primary-600" : "text-slate-900"}`}>
                       {q}
                     </span>
 
-                    {/* Plus → X; hover merah, open merah */}
                     <span
                       className={`shrink-0 inline-grid place-items-center size-9 rounded-full
-                                  ring-1 transition-all
+                                  ring-1 transition-all duration-300 ease-in-out
                                   ${isOpen
-                                    ? "bg-accent-50 text-accent-700 ring-accent-200/70 rotate-45"
-                                    : "bg-primary-50 text-primary-700 ring-primary-200/70 hover:bg-accent-50 hover:text-accent-700 hover:ring-accent-200/70 hover:scale-105"}`}
+                                  ? "bg-accent-600 hover:bg-accent-700 text-white ring-transparent rotate-45" // Menggunakan warna merah (accent) saat terbuka
+                                  : "bg-primary-50 text-primary-600 ring-primary-200/70 hover:bg-primary-100 hover:text-primary-700"}`}
                       aria-hidden
                     >
-                      <PlusIcon className="size-4" />
+                      <PlusIcon className="size-4 transition-transform duration-300" />
                     </span>
                   </button>
 
-                  {/* content */}
                   {isOpen && (
                     <div className="px-6 pt-0 pb-5">
-                      <div className="h-px bg-slate-200/80 mb-3" />
-                      <p className="text-[15px] leading-[1.7] text-slate-600 whitespace-pre-line">
+                      <div className="h-px bg-slate-200 mb-4" />
+                      <p className="text-[15px] leading-relaxed text-slate-600 whitespace-pre-line">
                         {a}
                       </p>
                     </div>
