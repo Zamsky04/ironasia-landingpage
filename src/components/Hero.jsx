@@ -1,4 +1,5 @@
   import { useI18n } from "../i18n/useI18n";
+  import { CheckCircleIcon, LockClosedIcon, BoltIcon } from '@heroicons/react/24/solid';    
 
   export default function Hero() {
     const { t } = useI18n();
@@ -24,7 +25,6 @@
                 loading="lazy"
               />
 
-              {/* Dekor konstruksi */}
               <img
                 src="/decor/helmet.png"
                 alt=""
@@ -85,24 +85,23 @@
               </div>
 
               <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-white/85 text-sm">
-                <div className="flex items-center gap-2">
-                  <span>✅</span>
-                  {t("hero.trust1")}
+                <div className="flex items-center gap-1.5">
+                  <CheckCircleIcon className="size-4" />
+                  <span>{t("hero.trust1")}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span>🔒</span>
-                  {t("hero.trust2")}
+                <div className="flex items-center gap-1.5">
+                  <LockClosedIcon className="size-4" />
+                  <span>{t("hero.trust2")}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span>⚡</span>
-                  {t("hero.trust3")}
+                <div className="flex items-center gap-1.5">
+                  <BoltIcon className="size-4" />
+                  <span>{t("hero.trust3")}</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Gelombang putih footer hero */}
         <svg
           className="hidden sm:block absolute -bottom-px left-0 w-full pointer-events-none"
           viewBox="0 0 1440 80"
