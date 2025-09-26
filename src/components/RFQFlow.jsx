@@ -94,7 +94,7 @@ export default function RFQFlow() {
     }
 
     return (
-        <section id="alur" className="relative py-16 md:py-20 bg-gradient-to-b from-primary-300 to-white">
+        <section id="alur" className="relative py-16 md:py-20 bg-gradient-to-b from-primary-100 to-white">
             <div className="container-fluid">
                 <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold text-center text-slate-900">
                     {tn("rfq.title")}
