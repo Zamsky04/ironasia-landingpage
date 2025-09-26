@@ -26,7 +26,7 @@ export default function Features() {
   return (
     <section
       id="fitur"
-      className="relative py-16 md:py-20 bg-gradient-to-t from-primary-300 to-white"
+      className="relative py-16 md:py-20 bg-feature-section"
     >
       <div className="container-fluid">
         <div className="text-center">
@@ -51,9 +51,10 @@ export default function Features() {
                 aria-expanded={isOpen}
                 onClick={() => toggleExpanded(idx)}
                 onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && toggleExpanded(idx)}
-                className="group relative rounded-2xl p-6 sm:p-7 bg-white border border-slate-200
-                           shadow-lg transition-all duration-300 ease-out cursor-pointer
-                           hover:shadow-xl hover:-translate-y-1.5"
+                className="group relative rounded-2xl p-6 sm:p-7 
+                          bg-[var(--ia-blue)] text-white 
+                          shadow-lg transition-all duration-300 ease-out cursor-pointer
+                          hover:shadow-xl hover:-translate-y-1.5"
               >
                 <div className="flex items-center gap-4">
                   <div className="inline-flex items-center justify-center size-12 rounded-xl 
@@ -61,7 +62,7 @@ export default function Features() {
                                   transition-transform duration-300 group-hover:scale-105">
                     <Icon className="size-6 text-primary-600" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-semibold text-lg sm:text-xl text-slate-800">{title}</h3>
+                  <h3 className="font-semibold text-lg sm:text-xl ">{title}</h3>
                 </div>
 
                 <div
@@ -71,7 +72,7 @@ export default function Features() {
                               : "max-h-0 opacity-0 mt-0 group-hover:max-h-60 group-hover:opacity-100 group-hover:mt-4"
                             }`}
                 >
-                  <p className="text-base text-slate-600 leading-relaxed">{desc}</p>
+                  <p className="text-base leading-relaxed">{desc}</p>
                 </div>
               </article>
             );

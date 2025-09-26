@@ -265,3 +265,7 @@ body.drawer-open [id*="chat"] {
   background-size: min(70vw, 560px);
   filter: grayscale(100%) contrast(1.02);
 }
+
+.bg-feature-section {
+  background: linear-gradient(to top, #f1f5f9, #ffffff); /* abu-abu → putih */
+}
