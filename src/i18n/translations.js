@@ -157,26 +157,65 @@ export const TRANSLATIONS = {
       values:["Integritas","Efisiensi","Inovasi","Kolaborasi","Keberlanjutan"]
     },
 
+    common: {
+      ok: "OK",
+      close: "Tutup",        
+      valid: "Format terlihat valid.", 
+      wait: { title: "Tunggu sebentar" }, 
+      "wait.seconds": "Tunggu {0}s"       
+    },
+
+    errors: {
+      email: {
+        empty: "Email tidak boleh kosong.",
+        spaces: "Email tidak boleh mengandung spasi.",
+        at: "Format email tidak valid (tanda @ ganda atau tidak ada).",
+        parts: "Format email tidak valid (bagian sebelum/sesudah @ kosong).",
+        disallowed: "Email mengandung karakter yang tidak diizinkan.",
+        localInvalid: "Bagian sebelum @ mengandung karakter tidak valid.",
+        localDots: "Bagian sebelum @ tidak boleh diawali/diakhiri titik atau berisi dua titik berurutan.",
+        domainEdgeDot: "Domain tidak boleh diawali/diakhiri titik.",
+        domainDoubleDot: "Domain tidak boleh mengandung dua titik berurutan.",
+        domainNoDot: "Nama domain harus mengandung titik (mis. perusahaan.co.id).",
+        domainTooLong: "Nama domain terlalu panjang.",
+        domainEmptyLabel: "Domain memiliki label kosong.",
+        domainLabelTooLong: "Salah satu label domain terlalu panjang (>63).",
+        domainInvalidChars: "Domain mengandung karakter tidak valid.",
+        domainDashEdge: "Label domain tidak boleh diawali/diakhiri tanda minus (-).",
+        tld: "Ekstensi domain (TLD) tidak valid. Contoh: .com, .co.id, .id, .org.",
+        hint: "Sepertinya maksud Anda {0}?",
+        suspectDomain: "Domain mencurigakan. Maksud Anda {0}?"
+      }
+    },
+
     demo: {
-      title: "Minta Demo Gratis",
-      subtitle: "Isi formulir di bawah ini dan tim kami akan segera menghubungi Anda untuk menjadwalkan demo personal.",
+      cooldown: { text: "Anda baru saja mengirim permintaan. Coba lagi dalam {0} detik." },
       form: {
-        name: "Nama Lengkap",
-        company: "Nama Perusahaan",
-        email: "Alamat Email",
-        phone: "Nomor Telepon",
-        role: "Jabatan Anda",
-        message: "Pesan Tambahan",
-        placeholder: "Apa yang ingin Anda ketahui lebih lanjut?",
-        submit: "Kirim Permintaan Demo",
-        submitting: "Mengirim...",
-        success: "Terima kasih! Permintaan Anda telah terkirim.",
-        error: "Terjadi kesalahan. Silakan coba lagi."
+        company_placeholder: "Nama Perusahaan",
+        email_placeholder: "nama@perusahaan.com",
+        type: "Jenis Demo",
+        type_online: "ONLINE",
+        type_offline: "OFFLINE",
+        date: "Tanggal",
+        time: "Jam",
+        validation: {
+          title: "Data Belum Lengkap",
+          text: "Mohon isi semua field bertanda * dan pastikan email valid.",
+          company: "Nama Perusahaan wajib diisi.",
+          type: "Jenis wajib dipilih.",
+          date: "Tanggal wajib diisi.",
+          time: "Jam wajib diisi.",
+          message: "Pesan wajib diisi."
+        },
+        fix: "Perbaiki",
+        success: { title: "Terkirim!", text: "Tim kami akan segera menghubungi Anda.", banner: "Terima kasih! Permintaan Anda telah terkirim." },
+        error: { title: "Gagal Mengirim", text: "Silakan coba lagi.", banner: "Terjadi kesalahan. Silakan coba lagi." }
       }
     },
 
     help: {
       title: "Butuh Bantuan?",
+      cooldown: { text: "Anda baru saja mengirim tiket. Coba lagi dalam {0} detik." },
       subtitle: "Tim kami siap membantu. Isi formulir di bawah ini dan kami akan segera menghubungi Anda.",
       form: {
         name: "Nama Lengkap",
@@ -190,6 +229,7 @@ export const TRANSLATIONS = {
         message_placeholder: "Jelaskan kendala atau pertanyaan Anda di sini...",
         submit: "Kirim Tiket Bantuan",
         submitting: "Mengirim...",
+        fix: "Perbaiki",
         validation: {
           title: "Data Belum Lengkap",
           text: "Mohon isi semua kolom yang ditandai *.",
@@ -318,26 +358,73 @@ export const TRANSLATIONS = {
 
     about:{ title:"About Us", timelineTitle:"Company Timeline", timeline:["2020 – Idea born","2021-2024 – Platform development","2025 – Official launch of IronAsia"], visionTitle:"Vision", vision:"To become Indonesia’s largest building materials e-commerce platform, connecting the entire construction ecosystem.", missionTitle:"Mission", mission:["Provide easy access to a wide range of building materials.","Ensure transparent pricing and quality.","Help contractors and retailers get materials on time.","Promote digitalization of Indonesia’s construction industry.","Serve both B2B and B2C needs in a hybrid way."], valuesTitle:"Core Values", values:["Integrity","Efficiency","Innovation","Collaboration","Sustainability"] },
 
+    common: {
+      ok: "OK",
+      close: "Close",
+      valid: "Looks valid.",
+      wait: { title: "Please wait" },
+      "wait.seconds": "Wait {0}s"
+    },
+
+    errors: {
+      email: {
+        empty: "Email cannot be empty.",
+        spaces: "Email must not contain spaces.",
+        at: "Invalid email format (missing or duplicate @).",
+        parts: "Invalid email format (local or domain part missing).",
+        disallowed: "Email contains disallowed characters.",
+        localInvalid: "The local part contains invalid characters.",
+        localDots: "The local part must not start/end with a dot or contain consecutive dots.",
+        domainEdgeDot: "Domain must not start or end with a dot.",
+        domainDoubleDot: "Domain must not contain consecutive dots.",
+        domainNoDot: "Domain must contain a dot (e.g., company.co.id).",
+        domainTooLong: "Domain name is too long.",
+        domainEmptyLabel: "Domain contains an empty label.",
+        domainLabelTooLong: "One of the domain labels exceeds 63 characters.",
+        domainInvalidChars: "Domain contains invalid characters.",
+        domainDashEdge: "Domain labels must not start or end with a dash (-).",
+        tld: "Invalid top-level domain (e.g., .com, .co.id, .id, .org).",
+        hint: "Did you mean {0}?",
+        suspectDomain: "Suspicious domain. Did you mean {0}?"
+      }
+    },
+
     demo: {
-      title: "Request a Free Demo",
-      subtitle: "Fill out the form below and our team will contact you shortly to schedule a personal demo.",
+      cooldown: { text: "You just sent a request. Try again in {0} seconds." },
       form: {
-        name: "Full Name",
-        company: "Company Name",
-        email: "Email Address",
-        phone: "Phone Number",
-        role: "Your Role",
-        message: "Additional Message",
-        placeholder: "What would you like to know more about?",
-        submit: "Send Demo Request",
-        submitting: "Submitting...",
-        success: "Thank you! Your request has been sent.",
-        error: "An error occurred. Please try again."
+        company_placeholder: "Company Name",
+        email_placeholder: "name@company.com",
+        type: "Demo Type",
+        type_online: "ONLINE",
+        type_offline: "OFFLINE",
+        date: "Date",
+        time: "Time",
+        validation: {
+          title: "Incomplete Data",
+          text: "Please fill all required fields (*) and ensure the email is valid.",
+          company: "Company name is required.",
+          type: "Type is required.",
+          date: "Date is required.",
+          time: "Time is required.",
+          message: "Message is required."
+        },
+        fix: "Fix",
+        success: {
+          title: "Submitted!",
+          text: "Our team will contact you shortly.",
+          banner: "Thank you! Your request has been sent."
+        },
+        error: {
+          title: "Submission Failed",
+          text: "Please try again.",
+          banner: "An error occurred. Please try again."
+        }
       }
     },
 
     help: {
       title: "Need Help?",
+      cooldown: { text: "You just sent a ticket. Try again in {0} seconds." },
       subtitle: "Our team is here to assist. Fill out the form below, and we will get back to you shortly.",
       form: {
         name: "Full Name",
@@ -359,6 +446,7 @@ export const TRANSLATIONS = {
           subject: "Subject is required.",
           message: "Message is required."
         },
+        fix: "Fix",
         success: {
           title: "Submitted!",
           text: "Your help ticket has been received. Our team will respond shortly."
@@ -553,26 +641,73 @@ export const TRANSLATIONS = {
       values: ["诚信","效率","创新","协作","可持续性"]
     },
 
+    common: {
+      ok: "确定",
+      close: "关闭",
+      valid: "格式看起来有效。",
+      wait: { title: "请稍候" },
+      "wait.seconds": "请等待 {0} 秒"
+    },
+
+    errors: {
+      email: {
+        empty: "邮箱不能为空。",
+        spaces: "邮箱地址不能包含空格。",
+        at: "邮箱格式无效（@ 缺失或重复）。",
+        parts: "邮箱格式无效（@ 前/后部分缺失）。",
+        disallowed: "邮箱包含不允许的字符。",
+        localInvalid: "本地部分包含无效字符。",
+        localDots: "本地部分不能以点开头/结尾，也不能包含连续的点。",
+        domainEdgeDot: "域名不能以点开头或结尾。",
+        domainDoubleDot: "域名不能包含连续的点。",
+        domainNoDot: "域名必须包含点（例如 company.co.id）。",
+        domainTooLong: "域名过长。",
+        domainEmptyLabel: "域名包含空标签。",
+        domainLabelTooLong: "域名中的某个标签超过 63 个字符。",
+        domainInvalidChars: "域名包含无效字符。",
+        domainDashEdge: "域名标签不能以连字符（-）开头或结尾。",
+        tld: "顶级域名无效（例如 .com、.co.id、.id、.org）。",
+        hint: "您是不是想输入 {0}？",
+        suspectDomain: "可疑的域名。您是否想输入 {0}？"
+      }
+    },
+
     demo: {
-      title: "请求免费演示",
-      subtitle: "请填写以下表格，我们的团队将尽快与您联系安排个人演示。",
+      cooldown: { text: "您刚提交过请求，请在 {0} 秒后重试。" },
       form: {
-        name: "全名",
-        company: "公司名称",
-        email: "电子邮件地址",
-        phone: "电话号码",
-        role: "您的职位",
-        message: "附加信息",
-        placeholder: "您想了解更多关于什么？",
-        submit: "发送演示请求",
-        submitting: "提交中...",
-        success: "谢谢！您的请求已发送。",
-        error: "发生错误。请再试一次。"
+        company_placeholder: "公司名称",
+        email_placeholder: "name@company.com",
+        type: "演示类型",
+        type_online: "在线",
+        type_offline: "线下",
+        date: "日期",
+        time: "时间",
+        validation: {
+          title: "信息不完整",
+          text: "请填写所有带 * 的必填项，并确保邮箱有效。",
+          company: "公司名称为必填项。",
+          type: "类型为必选项。",
+          date: "日期为必填项。",
+          time: "时间为必填项。",
+          message: "留言为必填项。"
+        },
+        fix: "修正",
+        success: {
+          title: "已提交！",
+          text: "我们会尽快与您联系。",
+          banner: "谢谢！您的请求已发送。"
+        },
+        error: {
+          title: "提交失败",
+          text: "请重试。",
+          banner: "发生错误，请重试。"
+        }
       }
     },
 
     help: {
       title: "需要帮助吗？",
+      cooldown: { text: "您刚提交过帮助请求，请在 {0} 秒后重试。" },
       subtitle: "我们的团队随时准备为您提供帮助。请填写下面的表格，我们会尽快与您联系。",
       form: {
         name: "全名",
@@ -594,6 +729,7 @@ export const TRANSLATIONS = {
           subject: "主题是必填项。",
           message: "留言是必填项。"
         },
+        fix: "修正",
         success: {
           title: "已提交！",
           text: "我们已收到您的帮助请求，我们的团队将尽快回复。"
